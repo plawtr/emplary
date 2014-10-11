@@ -21,14 +21,26 @@
                 %a{:href => "#panel5"} Farmers’ Market
             .tabs-content
               #panel1.content.active
+                .row
+                  .small-9.columns
+                    %a.button{href: "/order_out", style: "margin-left: 40%;" } GET GREAT FOOD  
               #panel2.content
               #panel3.content
               #panel4.content
               #panel5.content
-        .row{style: "padding-top:30px;"}
-          .large-10.large-offset-2.columns
-            %p Andrey can we make it so these are just buttons, so it's a one-click process?
-
+        .row
+          .small-11.columns
+            %ul.button-group
+              %li
+                %a.button.secondary{:href => "order_out"} Order In
+              %li
+                %a.button.secondary{:href => "eat_out"} Eat Out
+              %li
+                %a.button.secondary{:href => "online"} Online 
+              %li
+                %a.button.secondary{:href => "store"} Store
+              %li
+                %a.button.secondary{:href => "farmers_market"} Farmers’ Market         
         .row
           .small-9.columns
             %a.button{href: "/explore", style: "margin-left: 40%;" } GET GREAT FOOD  

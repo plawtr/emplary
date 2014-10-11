@@ -1,0 +1,34 @@
+%section.benefits{style: "background: #ffd707; padding-top:50px; padding-bottom:80px;"}
+  .row
+    .large-9.large-offset-2.large-centered.columns{style: "padding-top: 40px;"}
+      %h1 Discover great food now!
+      = form_tag('/users/create') do
+        .row
+          .small-4.columns
+            = text_field_tag :postcode, nil, :placeholder => "Postcode", :required => true
+        .row
+          .small-11.columns
+            %dl.tabs{"data-tab" => ""}
+              %dd.active
+                %a{:href => "#panel1"} Order In
+              %dd
+                %a{:href => "#panel2"} Eat Out
+              %dd
+                %a{:href => "#panel3"} Online 
+              %dd
+                %a{:href => "#panel4"} Store
+              %dd
+                %a{:href => "#panel5"} Farmers’ Market
+            .tabs-content
+              #panel1.content.active
+              #panel2.content
+              #panel3.content
+              #panel4.content
+              #panel5.content
+        .row
+          .small-9.columns
+            = submit_tag "GET GREAT FOOD", :class => "button", :style => "margin-left: 45%;" 
+        .row
+          %p.small-9.columns
+            Already got an account?
+            %a{href: "/sessions/new"} Login here &raquo

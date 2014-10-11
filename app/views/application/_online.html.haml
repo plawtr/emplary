@@ -26,7 +26,7 @@
               %p Third panel content goes here...
             #panel2-4.content
               %p Fourth panel content goes here...
-      %dd.accordion-navigation
+      %dd.howion-navigation
         %a{:href => "#panel2"} Accordion 2
         #panel2.content
           Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -47,13 +47,14 @@
 .row
   .small-2.large-2.columns Asparagus
   .small-2.large-2.columns (why)
-  .small-8.large-8.columns How to cook
+  .small-8.large-8.columns 
+    %a{href: "/how_to_cook/asparagus"} How to cook
 
 .row{style: "padding-top:30px;"}
   .large-10.large-offset-2.columns
     %p Broccoli
     %p Cabbage
-    %a.button{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ"} Carrots [Andrey how do I get this to open in a new tab?]
+    %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target: "_blank"} Carrots [Andrey how do I get this to open in a new tab?]
     %p Lettuce
     %p Onions
     %p Spinach

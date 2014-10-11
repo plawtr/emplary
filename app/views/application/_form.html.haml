@@ -23,29 +23,24 @@
               #panel1.content.active
                 .row
                   .small-9.columns
-                    %a.button{href: "/order_out", style: "margin-left: 40%;" } GET GREAT FOOD  
+                    %a.button{href: "/order_out", style: "margin-left: 40%;" } GET GREAT FOOD DELIVERED  
               #panel2.content
+                .row
+                  .small-9.columns
+                    %a.button{href: "/eat_out", style: "margin-left: 40%;" } FIND GREAT RESTAURANTS 
               #panel3.content
+                .row
+                  .small-9.columns
+                    %a.button{href: "/online", style: "margin-left: 40%;" } GET ONLINE GROCERIES 
               #panel4.content
+                .row
+                  .small-9.columns
+                    %a.button{href: "/store", style: "margin-left: 40%;" } GET GREAT GROCERIES 
               #panel5.content
-        .row
-          .small-11.columns
-            %ul.button-group
-              %li
-                %a.button.secondary{:href => "order_out"} Order In
-              %li
-                %a.button.secondary{:href => "eat_out"} Eat Out
-              %li
-                %a.button.secondary{:href => "online"} Online 
-              %li
-                %a.button.secondary{:href => "store"} Store
-              %li
-                %a.button.secondary{:href => "farmers_market"} Farmers’ Market         
-        .row
-          .small-9.columns
-            %a.button{href: "/explore", style: "margin-left: 40%;" } GET GREAT FOOD  
-            / = submit_tag "GET GREAT FOOD", :class => "button", :style => "margin-left: 45%;" 
-        .row
-          %p.small-9.columns
-            Already got an account?
-            %a{href: "/sessions/new"} Login here &raquo
+                .row
+                  .small-9.columns
+                    %a.button{href: "/farmers_market", style: "margin-left: 40%;" } FIND GREAT MARKETS
+        / .row
+        /   %p.small-9.columns
+        /     Already got an account?
+        /     %a{href: "/sessions/new"} Login here &raquo

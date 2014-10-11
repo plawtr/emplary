@@ -1,15 +1,11 @@
-.row
-  .large-12.columns
-    %h1.text-center{style: "font-family: 'Roboto Condensed', sans; font-size: 3.5em; padding-top:30px; font-weight: bold; line-height: 1em;"}
-      BUY ONLINE
 .row{style: "padding-top:30px;"}
   .large-8.large-offset-2.columns
     %h2 In your area we recommend:  Ocado
     %dl.accordion{"data-accordion" => ""}
       %dd.accordion-navigation
-        %a{:href => "#panel1"} 
+        %a{:href => "#vegetables"} 
           Vegetables
-          #panel1.content
+          #vegetables.content
             .row
               .small-6.large-6.columns 
                 %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target: "_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Asparagus
@@ -41,8 +37,8 @@
               .small-6.large-6.columns 
                 %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
       %dd.accordion-navigation
-        %a{:href => "#panel2"} Dairy
-        #panel2.content
+        %a{:href => "#dairy"} Dairy
+        #dairy.content
           .row
             .small-6.large-6.columns 
               %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} Butter
@@ -68,8 +64,8 @@
             .small-6.large-6.columns 
               
       %dd.accordion-navigation
-        %a{:href => "#panel3"} Eggs
-        #panel3.content
+        %a{:href => "#eggs"} Eggs
+        #eggs.content
           .row
             .small-6.large-6.columns 
               %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Pastured eggs (non-Ocado)
@@ -81,16 +77,16 @@
             .small-6.large-6.columns 
               %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
       %dd.accordion-navigation
-        %a{:href => "#panel4"} Fish
-        #panel4.content
+        %a{:href => "#fish"} Fish
+        #fish.content
           .row
             .small-6.large-6.columns 
               %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Wild-caught salmon has higher ratios of omega-3 "} Wild-caught salmon
             .small-6.large-6.columns 
               %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
       %dd.accordion-navigation
-        %a{:href => "#panel5"} Meat
-        #panel5.content
+        %a{:href => "#meat"} Meat
+        #meat.content
           .row
             .small-6.large-6.columns 
               %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Pastured chicken
@@ -107,8 +103,8 @@
             .small-6.large-6.columns 
               %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
       %dd.accordion-navigation
-        %a{:href => "#panel6"} Nuts
-        #panel6.content
+        %a{:href => "#nuts"} Nuts
+        #nuts.content
           .row
             .small-6.large-6.columns 
               %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic beef contains more omega 3 because the animals are eating their natural diet, and contains fewer potentially harmful chemicals"} Organic cashew nuts

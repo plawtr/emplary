@@ -15,14 +15,9 @@ class ApplicationController < ActionController::Base
   def login
   end
 
-  def farmers_market
+  def results
   end
-
-  def eat_out
-  end
-
-  def online
-  end
+  
 
   def format_errors(error_messages)
     output = []

@@ -1,46 +1,12 @@
 %section.benefits{style: "background: #ffd707; padding-top:50px; padding-bottom:80px;"}
   .row
-    .large-9.large-offset-2.large-centered.columns{style: "padding-top: 40px;"}
+    .large-7.large-offset-3.large-centered.columns{style: "padding-top: 40px;"}
       %h1 Discover great food now!
+      %br
+      %br
       = form_tag('/users/create') do
-        .row
+        .row.collapse
+          .small-6.columns
+            = text_field_tag :postcode, nil, :placeholder => "Zip code", :required => true
           .small-4.columns
-            = text_field_tag :postcode, nil, :placeholder => "Postcode", :required => true
-        .row
-          .small-11.columns
-            %dl.tabs{"data-tab" => ""}
-              %dd.active
-                %a{:href => "#panel1"} Order In
-              %dd
-                %a{:href => "#panel2"} Eat Out
-              %dd
-                %a{:href => "#panel3"} Online 
-              %dd
-                %a{:href => "#panel4"} Store
-              %dd
-                %a{:href => "#panel5"} Farmers’ Market
-            .tabs-content
-              #panel1.content.active
-                .row
-                  .small-9.columns
-                    %a.button{href: "/order_out", style: "margin-left: 40%;" } GET GREAT FOOD DELIVERED  
-              #panel2.content
-                .row
-                  .small-9.columns
-                    %a.button{href: "/eat_out", style: "margin-left: 40%;" } FIND GREAT RESTAURANTS 
-              #panel3.content
-                .row
-                  .small-9.columns
-                    %a.button{href: "/online", style: "margin-left: 40%;" } GET ONLINE GROCERIES 
-              #panel4.content
-                .row
-                  .small-9.columns
-                    %a.button{href: "/store", style: "margin-left: 40%;" } GET GREAT GROCERIES 
-              #panel5.content
-                .row
-                  .small-9.columns
-                    %a.button{href: "/farmers_market", style: "margin-left: 40%;" } FIND GREAT MARKETS
-        / .row
-        /   %p.small-9.columns
-        /     Already got an account?
-        /     %a{href: "/sessions/new"} Login here &raquo
+            %a.button.postfix{href: "/results" } GET GREAT FOOD

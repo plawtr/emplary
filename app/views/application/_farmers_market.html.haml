@@ -1,0 +1,28 @@
+.row{style: "padding-top:30px;"}
+  .large-8.large-offset-2.columns
+    %h2 
+      In your area we recommend:
+    %dl.accordion{"data-accordion" => ""}
+      %dd.accordion-navigation
+        %a{:href => "#marylebone"} Marylebone Farmers’ Market 
+        #marylebone.content.active
+          %a{:href => "http://www.lfm.org.uk/markets/marylebone/", :target => "_blank"} Cramer Street Car Park, Marylebone, London W1U 4EW
+          %br
+          Sunday 10-2
+      %dd.accordion-navigation
+        %a{:href => "#bloomsbury"} Bloomsbury Farmers’ Market 
+        #bloomsbury.content
+          %a{:href => "http://www.lfm.org.uk/markets/bloomsbury/", :target => "_blank"} Torrington Square / Byng Place, behind ULU, WC1E 7HY
+          %br
+          Thursday 9am-2pm
+      %dd.accordion-navigation
+        %a{:href => "#other"} Other Options 
+        #other.content
+          %a{:href => "http://www.lfm.org.uk", :target => "_blank"} London Farmers' Markets
+          %br
+          %a{:href => "https://www.farmstandapp.com/", :target => "_blank"} Farm Stand App
+      %dd.accordion-navigation
+        %a{:href => "#favorites"} Your Favorites 
+        #favorites.content
+          %p Nothing here yet. Already got an account?
+          %a{href: "/sessions/new"} Login here &raquo

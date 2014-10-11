@@ -1,0 +1,27 @@
+.row
+  .large-12.columns
+    %h1.text-center{style: "font-family: 'Roboto Condensed', sans; font-size: 3.5em; padding-top:30px; font-weight: bold; line-height: 1em;"}
+      FARMERS' MARKETS
+    .row{style: "padding-top:30px;"}
+      .large-10.large-offset-2.columns
+        %p 
+          In your area we recommend:
+        %dl.accordion{"data-accordion" => ""}
+          %dd.accordion-navigation
+            %a{:href => "#panel1"} Marylebone Farmers’ Market 
+            #panel1.content.active
+              %a{:href => "http://www.lfm.org.uk/markets/marylebone/", :target => "_blank"} Cramer Street Car Park, Marylebone, London W1U 4EW
+              %br
+              Sunday 10-2
+          %dd.accordion-navigation
+            %a{:href => "#panel3"} Bloomsbury Farmers’ Market 
+            #panel3.content
+              %a{:href => "http://www.lfm.org.uk/markets/bloomsbury/", :target => "_blank"} Blackheath Station car park, Blackheath, London, SE3 9LA
+              %br
+              Sunday 10am-2pm
+          %dd.accordion-navigation
+            %a{:href => "#panel4"} Other Options 
+            #panel4.content
+              %a{:href => "http://www.lfm.org.uk", :target => "_blank"} London Farmers' Markets
+              %br
+              %a{:href => "https://www.farmstandapp.com/", :target => "_blank"} Farm Stand App

@@ -1,22 +1,16 @@
 .row
   .large-7.large-centered.columns{style: "padding-top: 50px;"}
-    %h1 Get in touch.
-    %h4{style: "padding-bottom: 30px;"} Please provide your preferred contact details and we'll reach out within 24 hours to help you through the on-boarding process. 
+    %h1 Want to sign up for Emplary?
+    %h4{style: "padding-bottom: 30px;"} We are rolling out to more areas as fast as we can while maintaining our service quality.  Please give us your zip code and email address and we'll get in touch as soon as we can help you. 
   .row
     .large-6.large-centered.columns
       = form_tag('/users/create') do
         .row.collapse
           .small-2.columns
             %span.prefix
-              %i.fi-torso{style: "font-size: 2em;"}
+              %i.fi-zip{style: "font-size: 2em;"}
           .small-10.columns
-            = text_field_tag :name, nil, :placeholder => "Name", :required => true
-        .row.collapse
-          .small-2.columns
-            %span.prefix
-              %i.fi-telephone{style: "font-size: 2em;"}
-          .small-10.columns
-            = text_field_tag :phone, nil, :placeholder => "Telephone", :required => true
+            = text_field_tag :phone, nil, :placeholder => "Zip", :required => true
         .row.collapse
           .small-2.columns
             %span.prefix
@@ -25,7 +19,7 @@
             = email_field_tag :email, nil, :placeholder => "Email", :required => true
         .row.collapse
           .large-12.large-centered.columns
-            = submit_tag "CONTACT ME", :class => "button", :style => "margin-left: 35%;" 
+            = submit_tag "Add me!", :class => "button", :style => "margin-left: 35%;" 
       .row.collapse
         %p.text-center
           Already have an account?

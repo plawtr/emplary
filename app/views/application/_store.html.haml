@@ -1,28 +1,122 @@
 .row{style: "padding-top:30px;"}
   .large-8.large-offset-2.columns
-    %h2 
-      In your area we recommend:
+    %h2 In your area we recommend:  Waitrose Marylebone
     %dl.accordion{"data-accordion" => ""}
       %dd.accordion-navigation
-        %a{:href => "#panel1"} Marylebone Farmers’ Market 
-        #panel1.content
-          %a{:href => "http://www.lfm.org.uk/markets/marylebone/", :target => "_blank"} Cramer Street Car Park, Marylebone, London W1U 4EW
-          %br
-          Sunday 10-2
+        %a{:href => "#vegetables"} 
+          Vegetables
+          #vegetables.content
+            .row
+              .small-6.large-6.columns 
+                %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Asparagus/62195011?from=search&tags&param=asparagus&parentContainer=SEARCHasparagus_SHELFVIEW", target: "_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Asparagus
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-6.large-6.columns 
+                %a.has-tip{href: "http://www.ocado.com/webshop/product/Organic-Broccoli-Waitrose/23770011?from=search&tags=%7C20000&param=organic+broccoli&parentContainer=SEARCHorganic+broccol_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Broccoli
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-6.large-6.columns 
+                %a.has-tip{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?from=search&tags=%7C20000&param=organic+carrots&parentContainer=SEARCHorganic+carrots_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Carrots
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-6.large-6.columns 
+                %a.has-tip{href: "http://www.ocado.com/webshop/product/Organic-Little-Gems-British-Waitrose/26751011?from=search&tags=%7C20000&param=lettuce&parentContainer=SEARCHlettuce_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Lettuce
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-6.large-6.columns 
+                %a.has-tip{href: "http://www.ocado.com/webshop/product/Organic-Onions-Waitrose/18913011?from=search&tags=%7C20000&param=organic+onions&parentContainer=SEARCHorganic+onions_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Onions
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-6.large-6.columns 
+                %a.has-tip{href: "http://www.ocado.com/webshop/product/Organic-Spinach-Waitrose/25256011?from=search&tags=%7C20000&param=spinach&parentContainer=SEARCHspinach_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Spinach
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
       %dd.accordion-navigation
-        %a{:href => "#panel3"} Bloomsbury Farmers’ Market 
-        #panel3.content
-          %a{:href => "http://www.lfm.org.uk/markets/bloomsbury/", :target => "_blank"} Torrington Square / Byng Place, behind ULU, WC1E 7HY
-          %br
-          Thursday 9am-2pm
+        %a{:href => "#dairy"} Dairy
+        #dairy.content
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Rachels-Organic-Butter/23610011?from=search&tags=%7C20000&param=organic+butter&parentContainer=SEARCHorganic+butter_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} Butter
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Duchy-From-Waitrose-Organic-Farmhouse-Cheddar/46066011?from=search&tags=%7C20000&param=organic+cheese&parentContainer=SEARCHorganic+cheese_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} Cheese
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Yeo-Valley-Organic-Double-Cream/27251011?from=search&tags=%7C20000&param=organic+cream&parentContainer=SEARCHorganic+cream_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} Cream
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Rachels-Organic-Fresh-Whole-Milk/26988011?from=search&tags=%7C20000&param=organic+milk&parentContainer=SEARCHorganic+milk_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} Grass-fed organic cow's milk
+            .small-6.large-6.columns 
+              
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Laverstoke-Park-Buffalo-Milk-Unhomogenised/44179011?from=search&tags=%7C20000&param=buffalo+milk&parentContainer=SEARCHbuffalo+milk_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed buffalo milk generally has higher Omega-3 content than cow's milk and lower carbohydrates"} Grass-fed buffalo milk
+            .small-6.large-6.columns 
+              
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Yeo-Valley-Organic-Greek-Style-Natural-Yogurt/27866011?from=search&tags=%7C20000&param=organic+yoghurt&parentContainer=SEARCHorganic+yoghurt_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Yoghurt
+            .small-6.large-6.columns 
+              
       %dd.accordion-navigation
-        %a{:href => "#panel4"} Other Options 
-        #panel4.content
-          %a{:href => "http://www.lfm.org.uk", :target => "_blank"} London Farmers' Markets
-          %br
-          %a{:href => "https://www.farmstandapp.com/", :target => "_blank"} Farm Stand App
+        %a{:href => "#eggs"} Eggs
+        #eggs.content
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.laverstokepark.co.uk/from-the-dairy-eggs/laverstoke-park-farm/six-organic-free-range-dark-maran-eggs_ct589bd190pd1860.htm", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "We think these have the best natural Omega 3 to Omega 6 ratio (not from flaxseed supplements), raised with the environment and diet that they would naturally prefer and producing fewer eggs per year than most commercial flocks."} Pastured eggs (non-Ocado)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Duchy-From-Waitrose-Organic-Free-Range-Medium-Eggs/21465011?from=search&tags=%7C20000&param=organic+eggs&parentContainer=SEARCHorganic+eggs_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Organic eggs
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
       %dd.accordion-navigation
-        %a{:href => "#panel5"} Your Favorites 
-        #panel5.content
-          %p Nothing here yet. Already got an account?
-          %a{href: "/sessions/new"} Login here &raquo
+        %a{:href => "#fish"} Fish
+        #fish.content
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/2-Wild-Alaskan-Sockeye-Salmon-Fillets-Waitrose/33848011?from=search&tags=%7C20000&param=wild+salmon&parentContainer=SEARCHwild+salmon_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Wild-caught salmon has higher ratios of omega-3 "} Wild-caught salmon
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+      %dd.accordion-navigation
+        %a{:href => "#meat"} Meat
+        #meat.content
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Duchy-From-Waitrose-Organic-Half-Leg-of-Lamb/23542011?from=search&tags=%7C20000&param=organic+lamb+leg&parentContainer=SEARCHorganic+lamb+le_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} Grass-fed lamb
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Laverstoke-Park-Organic-Beef-Roasting-Joint/64839011?from=search&tags=%7C20000&param=organic+beef&parentContainer=SEARCHorganic+beef_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic beef contains more omega 3 because the animals are eating their natural diet, and contains fewer potentially harmful chemicals"} Grass-fed beef
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+      %dd.accordion-navigation
+        %a{:href => "#nuts"} Nuts
+        #nuts.content
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Tree-of-Life-Organic-Whole-Cashews/245711011?from=search&tags=%7C20000&param=organic+cashew+nuts&parentContainer=SEARCHorganic+cashew+_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic beef contains more omega 3 because the animals are eating their natural diet, and contains fewer potentially harmful chemicals"} Organic cashew nuts
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Organic-Hazelnuts-Waitrose-Love-Life/25090011?from=search&tags=%7C20000&param=organic+hazelnuts&parentContainer=SEARCHorganic+hazelnu_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic beef contains more omega 3 because the animals are eating their natural diet, and contains fewer potentially harmful chemicals"} Organic hazelnuts
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Organic-Walnuts-Waitrose-Love-Life/27952011?from=search&tags=%7C20000&param=organic+walnuts&parentContainer=SEARCHorganic+walnuts_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic beef contains more omega 3 because the animals are eating their natural diet, and contains fewer potentially harmful chemicals"} Organic walnuts
+      %dd.accordion-navigation
+        %a{:href => "#oils"} Oils and fats
+        #oils.content
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Biona-Organic-Virgin-Coconut-Oil/51011011?from=search&tags=%7C20000&param=organic+coconut+oil&parentContainer=SEARCHorganic+coconut_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "This is a great oil for cooking because the fat can tolerate high cooking temperatures without being damaged"} Organic coconut oil
+          .row
+            .small-6.large-6.columns 
+              %a.has-tip{href: "http://www.ocado.com/webshop/product/Mr-Organic-Extra-Virgin-Olive-Oil/73529011?from=search&tags=%7C20000&param=organic+olive+oil&parentContainer=SEARCHorganic+olive+o_SHELFVIEW", target:"_blank", "aria-haspopup" => "true", "data-tooltip" => "", :title => "Good for salad dressings; we do not recommend cooking with it because it is damaged by high temperature."} Organic olive oil
+          
+           

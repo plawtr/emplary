@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
   def eat_out
   end
 
+  def online
+  end
+
   def format_errors(error_messages)
     output = []
     error_messages.each {|k, v| output << "#{k.to_s.capitalize} #{v.join(", ")}."}

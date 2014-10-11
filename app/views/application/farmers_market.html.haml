@@ -3,7 +3,7 @@
     %h1.text-center{style: "font-family: 'Roboto Condensed', sans; font-size: 3.5em; padding-top:30px; font-weight: bold; line-height: 1em;"}
       FARMERS' MARKETS
     .row{style: "padding-top:30px;"}
-      .large-10.large-offset-2.columns
+      .large-8.large-offset-2.columns
         %p 
           In your area we recommend:
         %dl.accordion{"data-accordion" => ""}
@@ -25,3 +25,8 @@
               %a{:href => "http://www.lfm.org.uk", :target => "_blank"} London Farmers' Markets
               %br
               %a{:href => "https://www.farmstandapp.com/", :target => "_blank"} Farm Stand App
+          %dd.accordion-navigation
+            %a{:href => "#panel5"} Your Favorites 
+            #panel5.content
+              %p Nothing here yet. Already got an account?
+              %a{href: "/sessions/new"} Login here &raquo

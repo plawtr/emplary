@@ -2,118 +2,164 @@
   .large-12.columns
     %h1.text-center{style: "font-family: 'Roboto Condensed', sans; font-size: 3.5em; padding-top:30px; font-weight: bold; line-height: 1em;"}
       BUY ONLINE
-.row{style: "padding-top:30px;"}
-  .large-10.large-offset-2.columns
-    %dl.accordion{"data-accordion" => ""}
-      %dd.accordion-navigation
-        %a{:href => "#panel1"} Accordion 1
-        #panel1.content.active
-          %dl.tabs{"data-tab" => ""}
-            %dd.active
-              %a{:href => "#panel2-1"} Tab 1
-            %dd
-              %a{:href => "#panel2-2"} Tab 2
-            %dd
-              %a{:href => "#panel2-3"} Tab 3
-            %dd
-              %a{:href => "#panel2-4"} Tab 4
-          .tabs-content
-            #panel2-1.content.active
-              %p First panel content goes here...
-            #panel2-2.content
-              %p Second panel content goes here...
-            #panel2-3.content
-              %p Third panel content goes here...
-            #panel2-4.content
-              %p Fourth panel content goes here...
-      %dd.accordion-navigation
-        %a{:href => "#panel2"} Accordion 2
-        #panel2.content
-          Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      %dd.accordion-navigation
-        %a{:href => "#panel3"} Accordion 3
-        #panel3.content
-          Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 
 .row{style: "padding-top:30px;"}
   .large-10.large-offset-2.columns
     %h2 In your area we recommend:  Ocado
    
-.row{style: "padding-top:30px;"}
-  .large-10.large-offset-2.columns
-    %h3 Vegetables [these need to be collapsing lists]
 
-.row
-  .small-2.large-2.columns Asparagus
-  .small-2.large-2.columns (why)
-  .small-8.large-8.columns How to cook
 
 .row{style: "padding-top:30px;"}
   .large-10.large-offset-2.columns
-    %p Broccoli
-    %p Cabbage
-    %a.button{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ"} Carrots [Andrey how do I get this to open in a new tab?]
-    %p Lettuce
-    %p Onions
-    %p Spinach
-  .large-10.large-offset-2.columns
-    %h3 Dairy 
-    %p Butter
-    %p Cheese [we need a subordinate list below this]
-    %p Cream
-    %p Grass-fed organic cow's milk
-    %p Grass-fed organic buffalo milk
-    %p Yoghurt
-  .large-10.large-offset-2.columns
-    %h3 Eggs
-    %p.subheader
-    Pastured eggs (non-Ocado) 
-    %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "We think these have the best natural Omega 3 to Omega 6 ratio (not from flaxseed supplements), raised with the environment and diet that they would naturally prefer and producing fewer eggs per year than most commercial flocks.  http://www.laverstokepark.co.uk/poultry.aspx "} why
-    How to cook
-    %p Organic eggs
-  .large-10.large-offset-2.columns
-    %h3 Fish 
-    %p Wild-caught salmon   (why)  (how to cook)
-  .large-10.large-offset-2.columns
-    %h3 Meat
-    %p Organic pastured chicken  (why) (how to cook)
-    %p.subheader
-    Organic grass-fed lamb shoulder 
-    %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "These lambs are purely grass-fed, meaning their meat has a high Omega 3 content and their diet corresponds most closely to what they would eat in tehe wild"} why
-    How to cook
-    %p Organic grass-fed beef  (why) (how to cook)
-  .large-10.large-offset-2.columns
-    %h3 Nuts 
-    %p Organic cashew nuts
-    %p Organic hazelnuts
-    %p Organic walnuts 
-    .large-9.medium-8.columns
-  %h1#tooltips Tooltips
-  %h3.subheader
-    Tooltips are a quick way to provide
-    %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Tooltips are awesome, you should totally use them!"} extended information
-    on a term or action on a page.
+    %dl.accordion{"data-accordion" => ""}
+      %dd.accordion-navigation
+        %a{:href => "#panel1"} 
+          Vegetables
+          #panel1.content
+            .row
+              .small-3.large-3.columns 
+                %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Asparagus
+              .small-3.large-3.columns 
+                %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-3.large-3.columns 
+                %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Broccoli
+              .small-3.large-3.columns 
+                %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-3.large-3.columns 
+                %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Carrots
+              .small-3.large-3.columns 
+                %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-3.large-3.columns 
+                %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Lettuce
+              .small-3.large-3.columns 
+                %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-3.large-3.columns 
+                %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Onions
+              .small-3.large-3.columns 
+                %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+            .row
+              .small-3.large-3.columns 
+                %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Spinach
+              .small-3.large-3.columns 
+                %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+              .small-6.large-6.columns 
+                %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
 
-    %hr/
-%h4#dropdowns Dropdowns
-%p
-  %a.button{"data-dropdown" => "tinyDrop", :href => "#"} Link Dropdown »
-  %a.button{"data-dropdown" => "contentDrop", :href => "#"} Content Dropdown »
-  / Dropdowns
-%ul#tinyDrop.f-dropdown{"data-dropdown-content" => ""}
-  %li
-    %a{:href => "#"} This is a link
-  %li
-    %a{:href => "#"} This is another
-  %li
-    %a{:href => "#"} Yet another
-#contentDrop.f-dropdown.content.medium{"data-dropdown-content" => ""}
-  %h4 Title
-  %p
-    Some text that people will think is awesome! Some text that people will
-    think is awesome! Some text that people will think is awesome!
-  %img{:src => "../assets/img/examples/launch.jpg"}/
-  %p Launching a Discovery Mission
-  %a.button{:href => "#"} Button
-
+      %dd.accordion-navigation
+        %a{:href => "#panel2"} Dairy
+        #panel2.content
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Butter
+            .small-9.large-9.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} (why)
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Cheese
+            .small-9.large-9.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} (why)
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Cream
+            .small-9.large-9.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} (why)
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Grass-fed organic cow's milk
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic dairy products generally have higher Omega-3 content and fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Grass-fed buffalo milk
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed buffalo milk generally has higher Omega-3 content than cow's milk and lower carbohydrates"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Yoghurt
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+      %dd.accordion-navigation
+        %a{:href => "#panel3"} Eggs
+        #panel3.content
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Pastured eggs (non-Ocado)
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Organic eggs
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+      %dd.accordion-navigation
+        %a{:href => "#panel4"} Fish
+        #panel4.content
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Wild-caught salmon
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Wild-caught salmon has higher ratios of omega-3 "} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+      %dd.accordion-navigation
+        %a{:href => "#panel5"} Meat
+        #panel5.content
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Pastured chicken
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Grass-fed lamb
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Organic vegetables contain fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Grass-fed beef
+            .small-3.large-3.columns 
+              %a.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Grass-fed organic beef contains more omega 3 because the animals are eating their natural diet, and contains fewer potentially harmful chemicals"} (why)
+            .small-6.large-6.columns 
+              %a{href: "/how_to_cook/asparagus", target:"_blank"} How to cook
+      %dd.accordion-navigation
+        %a{:href => "#panel6"} Nuts
+        #panel6.content
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Organic cashew nuts
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Organic hazelnuts
+          .row
+            .small-3.large-3.columns 
+              %a{href: "http://www.ocado.com/webshop/product/Ocado-Organic-Carrots/65353011?ULP_CAMPAIGN_ID=3&gclid=CPDazsW2pMECFa7KtAodWTkARQ", target:"_blank"} Organic walnuts
+           

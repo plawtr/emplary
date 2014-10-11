@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
   def farmers_market
   end
 
+  def eat_out
+  end
+
   def format_errors(error_messages)
     output = []
     error_messages.each {|k, v| output << "#{k.to_s.capitalize} #{v.join(", ")}."}

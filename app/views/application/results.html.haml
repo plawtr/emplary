@@ -19,12 +19,12 @@
 .row
   .large-10.large-offset-1.columns      
     .tabs-content
-      #order_in.content.active
+      #online.content.active
+        =render "online" 
+      #order_in.content
         =render "order_in"
       #eat_out.content
-        =render "eat_out"       
-      #online.content
-        =render "online"     
+        =render "eat_out"           
       #store.content
         =render "store"      
       #farmers_market.content

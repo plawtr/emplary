@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     	gb.lists.subscribe({:id => ENV['MAILCHIMP_LIST_ID'], 
           :email => {:email => email}, 
-          :merge_vars => {:FNAME => name, :PHONE => phone},
+          :merge_vars => {:ZIPCODE => zipcode},
           :double_optin => false,
         	:send_welcome => true})
 

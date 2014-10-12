@@ -2,13 +2,14 @@
 %section.benefits{style: "background: #BAE7E0; padding-top:80px; padding-bottom:120px;"}
   .row
     %a{:name => "discover"}
-    .large-7.large-centered.columns{style: "padding-top: 40px;"}
-      %h1 Discover great food now!
+    .large-8.large-centered.columns{style: "padding-top: 40px;"}
+      %h1.text-center{style: "font-family: 'Roboto Condensed', sans; font-size: 3.5em; padding-top:30px; font-weight: bold; line-height: 1em;"} Discover great food now!
       %br
       %br
       = form_tag('/users/create') do
-        .row.collapse
-          .small-6.columns
-            = text_field_tag :postcode, nil, :placeholder => "Zip code", :required => true
-          .small-4.columns
-            %a.button.postfix{href: "/results" } GO
+        .large-8.large-centered.columns
+          .row.collapse
+            .small-6.columns
+              = text_field_tag :postcode, nil, :placeholder => "Zip code", :required => true
+            .small-4.columns
+              %a.button.postfix{href: "/results" } GO

@@ -54,12 +54,12 @@ $body-font-family: "Roboto", "Helvetica Neue", "Helvetica", Helvetica, Arial, sa
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #f03;
-$secondary-color: #666;
+$primary-color: #7ec8bc; //#f03;   //
+$secondary-color: #7ec8bc; //#BAE7E0;//#666; //
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
-$info-color: #ffd707;
+$info-color: #BAE7E0; //#ffd707;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -1168,7 +1168,7 @@ $header-font-family: "Roboto Slab", 'serif';
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #2b3e51;
+$topbar-bg-color: #7ec8bc;//#2b3e51;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1190,14 +1190,14 @@ $topbar-title-font-size: rem-calc(32);
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: #fff;
-$topbar-link-color-hover: #f03;
-$topbar-link-color-active: #f03;
-$topbar-link-color-active-hover: #f03;
+$topbar-link-color-hover: #7ec8bc;//#f03;
+$topbar-link-color-active: #7ec8bc; //#f03;
+$topbar-link-color-active-hover: #7ec8bc; //#f03;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: 10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: #272727;
+$topbar-link-bg-hover: #BAE7E0;// #272727;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: 14%);
 // $topbar-link-font-family: $body-font-family;

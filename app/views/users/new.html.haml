@@ -1,5 +1,5 @@
 .row
-  .large-7.large-centered.columns{style: "padding-top: 50px;"}
+  .large-8.large-centered.columns{style: "padding-top: 50px;"}
     %h1 Want to sign up for Emplary?
     %h4{style: "padding-bottom: 30px;"} We are signing up more users and areas as fast as we can while maintaining our service quality.  Please give us your zip code and email address and we'll get in touch as soon as we can help you. 
   .row
@@ -8,9 +8,9 @@
         .row.collapse
           .small-2.columns
             %span.prefix
-              %i.fi-telephone{style: "font-size: 2em;"}
+              %i.fi-address-book{style: "font-size: 2em;"}
           .small-10.columns
-            = text_field_tag :phone, nil, :placeholder => "Zip", :required => true
+            = text_field_tag :phone, nil, :placeholder => "Zip code", :required => true
         .row.collapse
           .small-2.columns
             %span.prefix

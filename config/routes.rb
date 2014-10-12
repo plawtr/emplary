@@ -13,6 +13,7 @@ FUFLOW::Application.routes.draw do
   get 'pricing' => 'application#pricing'
   get 'sessions/new' => 'application#login'
   get 'results' => 'application#results'
+  get 'thank_you' => 'users#thank_you'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

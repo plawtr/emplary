@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     	gb.lists.subscribe({:id => ENV['MAILCHIMP_LIST_ID'], 
           :email => {:email => email}, 
-          :merge_vars => {:FNAME => name, :PHONE => phone},
+          :merge_vars => {:ZIPCODE => zipcode},
           :double_optin => false,
         	:send_welcome => true})
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     else
       flash[:notice] = "Succesfully registered"
-      redirect_to new_user_path
+      redirect_to thank_you_path
 		end
       
   end

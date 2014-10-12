@@ -29,5 +29,12 @@
       %dd.accordion-navigation
         %a{:href => "#eat_out_favourites"} Your favorites 
         #eat_out_favourites.content
-          %p Nothing here yet. Already got an account?
-          %a{href: "/sessions/new"} Login here &raquo
+          %p Nothing here yet. 
+          .row
+            .small-6.columns
+              %p Already got an account?
+              %a{href: "/sessions/new"} Login here &raquo
+            .small-6.columns
+              %p 
+                %br
+              %a{href: "/users/new"} Sign up here &raquo

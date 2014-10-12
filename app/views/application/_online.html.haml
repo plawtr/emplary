@@ -121,8 +121,15 @@
       %dd.accordion-navigation
         %a{:href => "#favorites"} Your favorites 
         #favorites.content
-          %p Nothing here yet. Already got an account?
-          %a{href: "/sessions/new"} Login here &raquo
+          %p Nothing here yet. 
+          .row
+            .small-6.columns
+              %p Already got an account?
+              %a{href: "/sessions/new"} Login here &raquo
+            .small-6.columns
+              %p 
+                %br
+              %a{href: "/users/new"} Sign up here &raquo
     %br
     %p We believe ordering groceries online is generally the healthiest easy choice; if you have good food in the fridge, you'll be less tempted by bad options when you're hungry.
           

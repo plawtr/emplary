@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    mailchimp_register(params[:name], params[:email], params[:phone])   
+    mailchimp_register(params[:email], params[:zipcode])   
   end
 
-  def mailchimp_register(name, email, phone)
+  def mailchimp_register(email, zipcode)
   	gb = Gibbon::API.new
     begin
 

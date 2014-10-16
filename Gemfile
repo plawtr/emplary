@@ -6,7 +6,8 @@ gem 'unicorn'
 gem 'newrelic_rpm'
 
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+gem 'pg'
+gem 'geokit-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -24,7 +25,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -69,12 +70,26 @@ group :development do
   gem 'foreman'
 end
 
+group :development, :test do
+  gem "vcr"
+  gem "pry"
+  gem 'awesome_print'
+end
+
 group :test do
-	gem 'rspec-rails'
-  gem 'cucumber-rails', :require => false
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
-  # gem "factory_girl_rails", "~> 4.0"
-  gem 'poltergeist'
-  # gem 'selenium-webdriver'
+  gem 'rspec'
+  gem 'simplecov'
+  gem 'rspec-mocks'
+  gem 'rspec-rails'
+  gem 'capybara', "~> 2.2.0"
+  gem 'capybara-email'
+  gem 'cucumber-rails',:require => false
+  gem "factory_girl_rails", "~> 4.4.0"
+  gem 'selenium-webdriver', "~> 2.41.0"
+  #gem "poltergeist"
+  gem 'database_cleaner',:require => false
+  gem "pry-nav"
+  gem "webmock"
+  gem "email_spec"
+  gem "timecop"
 end

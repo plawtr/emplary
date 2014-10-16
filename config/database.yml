@@ -16,6 +16,28 @@
 #
 
 
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: fuflow_dev
+  pool: 5
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: fuflow_dev
+  pool: 5
+  host: localhost
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+
 # development:
 #   adapter: postgresql
 #   encoding: unicode

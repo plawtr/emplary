@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FUFLOW::Application.load_tasks
+Emplary::Application.load_tasks

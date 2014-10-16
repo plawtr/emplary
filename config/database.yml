@@ -19,14 +19,14 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: fuflow_dev
+  database: emplary_dev
   pool: 5
   host: localhost
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: fuflow_dev
+  database: emplary_dev
   pool: 5
   host: localhost
 

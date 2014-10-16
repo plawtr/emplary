@@ -36,6 +36,7 @@ group :doc do
 end
 
 gem 'devise', '~> 3.2.4'
+gem 'omniauth-facebook'
 gem 'rails_admin'
 
 # Use ActiveModel has_secure_password

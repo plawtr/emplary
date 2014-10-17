@@ -1,20 +1,24 @@
 Emplary::Application.routes.draw do
 
-  devise_for :users
+  root 'application#index'
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   resources:users, only: [:new, :create]
   post 'users/create' 
-  
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
-  # You can have the root of your site routed with "root"
-  
-  root 'application#index'
+
   get 'terms' => 'application#terms'
   get 'pricing' => 'application#pricing'
   get 'sessions/new' => 'application#login'
   get 'results' => 'application#results'
   get 'thank_you' => 'users#thank_you'
+
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

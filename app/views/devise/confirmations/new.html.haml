@@ -1,10 +1,20 @@
-%h2 Resend confirmation instructions
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br
-    = f.email_field :email, autofocus: true
-  %div
-    = f.submit "Resend confirmation instructions"
-= render "devise/shared/links"
+
+= devise_error_messages!
+.row
+  .large-6.large-centered.columns{style: "padding-top: 50px;"}
+    %h1 Resend confirmation instructions
+    %h4{style: "padding-bottom: 30px;"} 
+  .row
+    .large-6.large-centered.columns
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-mail{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.email_field :email, autofocus: true, :placeholder => "Email", :required => true
+        .row.collapse
+          .small-10.small-offset-2.columns
+            = f.submit "Resend confirmation instructions", :class => "button"
+          %br
+        = render "devise/shared/links"

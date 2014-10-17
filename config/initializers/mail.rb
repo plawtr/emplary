@@ -4,5 +4,6 @@ ActionMailer::Base.smtp_settings = {
   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
   :domain         => 'emplary.com',
-  :authentication => :plain,
+  :authentication => :plain
 }
+

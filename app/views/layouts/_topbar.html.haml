@@ -11,9 +11,18 @@
       %a{href: "/"}
         Menu
   %section.top-bar-section
-    %ul.right
-      %li
-        %a{:href => "/#discover"} GET STARTED
-      %li
-        %a{:href => "/sessions/new"} SIGN IN
-
+    - if user_signed_in?
+      %ul.right
+        %li
+          %a{:href => "/#discover"} GET STARTED
+        %li
+          %a{href: "/users/#{current_user.id}"}
+            MY PROFILE 
+        %li
+          = link_to "SIGN OUT", destroy_user_session_path, method: :delete
+    - else
+      %ul.right
+        %li
+          %a{:href => "/#discover"} GET STARTED
+        %li
+          %a{:href => "/sessions/new"} SIGN IN

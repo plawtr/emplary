@@ -54,10 +54,8 @@
           .small-10.columns
             = f.password_field :current_password, autocomplete: "off", :placeholder => "Current Password", :required => true
         .row.collapse
-          .small-10.small-offset-5.columns
+          .small-7.small-offset-5.columns
             = f.submit "Update", :class => "button"
-          %br
-        = render "devise/shared/links"
 .row
   .large-6.large-centered.columns{style: "padding-top: 50px;"}
     %h1 
@@ -65,7 +63,5 @@
     %h4{style: "padding-bottom: 30px;"} 
     .row
       .large-6.large-centered.columns
-        -# %a.button.expand.secondary{href: "#{registration_path(resource_name)}", formmethod: "delete"} 
-        -#   Cancel my account
         = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "button expand secondary"
       = link_to "Back", :back

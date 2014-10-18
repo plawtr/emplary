@@ -14,6 +14,11 @@ Emplary::Application.routes.draw do
   get 'results' => 'application#results'
   get 'thank_you' => 'users#thank_you'
 
+  match '/401', to: 'application#unauthorized', via: :all
+  match '/404', to: 'application#page_not_found', via: :all
+  match '/422', to: 'application#unprocessable', via: :all
+  match '/500', to: 'application#server_error', via: :all
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

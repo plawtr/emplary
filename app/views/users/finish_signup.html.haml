@@ -1,14 +1,20 @@
-%h1 Add Email
-= form_for(current_user, :as => 'user', :url => finish_signup_path(current_user), :html => { role: 'form'}) do |f|
-  - if @show_errors && current_user.errors.any?
-    #error_explanation
-      - current_user.errors.full_messages.each do |msg|
-        = msg
-        %br
-  .form-group
-    = f.label :email
-    .controls
-      = f.text_field :email, :autofocus => true, :value => '', class: 'form-control input-lg', placeholder: 'Example: email@me.com'
-      %p.help-block Please confirm your email address. No spam.
-  .actions
-    = f.submit 'Continue', :class => 'btn btn-primary'
+
+.row
+  .large-6.large-centered.columns{style: "padding-top: 50px;"}
+    %h1 Add Email
+    = form_for(current_user, :as => 'user', :url => finish_signup_path(current_user), :html => { role: 'form'}) do |f|
+      - if @show_errors && current_user.errors.any?
+        #error_explanation
+          - current_user.errors.full_messages.each do |msg|
+            = msg
+            %br
+      .row.collapse
+        .small-2.columns
+          %span.prefix
+            %i.fi-mail{style: "font-size: 2em;"}
+        .small-10.columns
+          = f.email_field :email, autofocus: true, :placeholder => "Email", :required => true
+          %p Please confirm your email address. No spam.
+      .row.collapse
+        .small-8.small-offset-4.columns
+          = f.submit 'Continue', :class => 'button'

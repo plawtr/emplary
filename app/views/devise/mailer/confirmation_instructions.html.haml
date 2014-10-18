@@ -1,6 +1,7 @@
 %p 
   Welcome 
-  = @email
+  = @resource.first_name
+  ,
 %p You can confirm your account email through the link below:
 - puts confirmation_url(@resource, confirmation_token: @token)
 %p

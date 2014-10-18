@@ -1,42 +1,71 @@
-%h2
-  Edit 
-  = resource_name.to_s.humanize
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br
-    = f.email_field :email, autofocus: true
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: 
-      = resource.unconfirmed_email
-  %div
-    = f.label :first_name
-    %br
-    = f.text_field :first_name
-  %div
-    = f.label :last_name
-    %br
-    = f.text_field :last_name
-  %div
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br
-    = f.password_field :password, autocomplete: "off"
-  %div
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  %div
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br
-    = f.password_field :current_password, autocomplete: "off"
-  %div
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? 
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+= devise_error_messages!
+.row
+  .large-6.large-centered.columns{style: "padding-top: 50px;"}
+    %h1 
+      Edit 
+      = resource_name.to_s.humanize
+    %h4{style: "padding-bottom: 30px;"} 
+    .row
+      .large-6.large-centered.columns
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-mail{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.email_field :email, autofocus: true, :placeholder => "Email"
+        .row.collapse
+          .small-12.columns
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %div
+              Currently waiting confirmation for: 
+              = resource.unconfirmed_email
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-torso{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.text_field :first_name, :placeholder => "First Name"     
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-torso-business{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.text_field :last_name, :placeholder => "Last Name" 
+            %small Leave blank if you do not want to change password.    
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-lock{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.password_field :password, autocomplete: "off", :placeholder => "Password"
+
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-lock{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation"
+            %small We need your current password to confirm your changes.
+        .row.collapse
+          .small-2.columns
+            %span.prefix
+              %i.fi-lock{style: "font-size: 2em;"}
+          .small-10.columns
+            = f.password_field :current_password, autocomplete: "off", :placeholder => "Current Password", :required => true
+        .row.collapse
+          .small-10.small-offset-5.columns
+            = f.submit "Update", :class => "button"
+          %br
+        = render "devise/shared/links"
+.row
+  .large-6.large-centered.columns{style: "padding-top: 50px;"}
+    %h1 
+      Cancel my account 
+    %h4{style: "padding-bottom: 30px;"} 
+    .row
+      .large-6.large-centered.columns
+        -# %a.button.expand.secondary{href: "#{registration_path(resource_name)}", formmethod: "delete"} 
+        -#   Cancel my account
+        = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "button expand secondary"
+      = link_to "Back", :back

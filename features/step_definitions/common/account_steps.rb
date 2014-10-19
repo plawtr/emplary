@@ -8,7 +8,7 @@ Given(/^an unconfirmed user$/) do
 end
 
 When(/^I sign up$/) do
-  visit new_user_registration_path
+  visit new_user_registration_url
   page.fill_in('user_email', :with => "john@mailinator.com")
   page.fill_in('user_first_name', :with => "John")
   page.fill_in('user_last_name', :with => "Smith")
@@ -62,19 +62,19 @@ Then(/^I should see "(.*?)"$/) do |content|
 end
 
 When(/^I sign in$/) do
-  visit new_user_session_path
+  visit new_user_session_url
   page.fill_in('user_email', :with => @the_user.email)
   page.fill_in('user_password', :with => "password")
   click_button('Sign in')
 end
 
 Given(/^I visit the homepage$/) do
-  visit root_path
+  visit root_url
 end
 
 
 When(/^I visit sign in page$/) do
-  visit new_user_session_path
+  visit new_user_session_url
 end
 
 Given(/^a user is logged in$/) do
@@ -87,7 +87,7 @@ When(/^I sign out$/) do
 end
 
 Then(/^I request a forgotten password$/) do
-  visit new_user_password_path
+  visit new_user_password_url
   page.fill_in('user_email', :with => @the_user.email)
   click_button('Send me reset password instructions')
 end
@@ -99,7 +99,7 @@ When(/^I provide a new password$/) do
 end
 
 Given(/^I request a password change without a token$/) do
-  visit edit_user_password_path
+  visit edit_user_password_url
 end
 
 When(/^I attempt to reuse the password recovery link$/) do

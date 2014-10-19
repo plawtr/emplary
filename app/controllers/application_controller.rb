@@ -19,34 +19,6 @@ class ApplicationController < ActionController::Base
 
   def results
   end
-  
-  def unauthorized
-    respond_to do |format|                       # layout: 'layouts/error', 
-      format.html { render template: 'errors/error_401', status: 401 }
-      format.all  { render nothing: true, status: 401 }
-    end
-  end
-
-  def unprocessable
-    respond_to do |format|                       # layout: 'layouts/error', 
-      format.html { render template: 'errors/error_422', status: 422 }
-      format.all  { render nothing: true, status: 422 }
-    end
-  end
-
-  def page_not_found
-    respond_to do |format|
-      format.html { render template: 'errors/error_404', status: 404 }
-      format.all  { render nothing: true, status: 404 }
-    end
-  end
-
-  def server_error
-    respond_to do |format|
-      format.html { render template: 'errors/error_500', status: 500 }
-      format.all  { render nothing: true, status: 500}
-    end
-  end
 
   def format_errors(error_messages)
     output = []

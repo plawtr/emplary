@@ -13,6 +13,7 @@ require 'rspec/mocks/standalone'
 require 'pry'
 require 'vcr'
 require 'capybara/email'
+require 'webmock/cucumber'
 
 require 'simplecov'
 

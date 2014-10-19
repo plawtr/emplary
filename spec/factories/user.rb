@@ -8,14 +8,19 @@ FactoryGirl.define do
     first_name "John"
     last_name
     admin false
-    email
+    email "test@mailinator.com"
     password "password"
     password_confirmation "password"
+    confirmed_at Time.now
 
     factory :admin do
-        admin true
+      admin true
     end
-    
+
+    trait :unconfirmed do 
+      confirmed_at nil 
+    end
+
   end
 
 end

@@ -3,8 +3,26 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
-
+require 'rubygems'
+require 'capybara'
+require 'capybara/cucumber'
+require 'selenium/webdriver'
 require 'cucumber/rails'
+require 'rspec/mocks'
+require 'rspec/mocks/standalone'
+require 'pry'
+require 'vcr'
+require 'capybara/email'
+
+require 'simplecov'
+
+SimpleCov.start 'rails' if ENV["COVERAGE"] == "true"
+DatabaseCleaner.strategy = :deletion
+World(FactoryGirl::Syntax::Methods)
+World(Warden::Test::Helpers)
+World(Devise::TestHelpers)
+
+World(Capybara::Email::DSL)
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -55,4 +73,26 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+Before do
+  DatabaseCleaner.clean
+  DatabaseCleaner.start
+  Warden.test_mode!
+  # @request.env["devise.mapping"] = Devise.mappings[:user] # If using Devise
+  # @request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook] 
+end
+
+After do |scenario|
+  DatabaseCleaner.clean
+end
+
+VCR.configure do |c|
+    c.cassette_library_dir = 'fixtures/vcr_cassettes'
+    c.hook_into :webmock
+    c.default_cassette_options = { :record => :new_episodes }
+    c.allow_http_connections_when_no_cassette = true
+end
+
+OmniAuth.config.test_mode = true
+
 

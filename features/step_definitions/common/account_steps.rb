@@ -1,24 +1,115 @@
 
 Given(/^a user$/) do
-  @user = User.new(admin: false, first_name: "John", last_name: "Smith", email: "j.smith@mailinator.com", password: "password", password_confirmation: "password" )
+  @the_user = FactoryGirl.create(:user, :confirmed_at => Time.now)
+end
 
-  @user2 = FactoryGirl.create(:user, :email => "j.smith@mailinator.com")
+Given(/^an unconfirmed user$/) do
+  @the_user = FactoryGirl.create(:user, :unconfirmed)
 end
 
 When(/^I sign up$/) do
-  pending # express the regexp above with the code you wish you had
+  visit new_user_registration_path
+  page.fill_in('user_email', :with => "john@mailinator.com")
+  page.fill_in('user_first_name', :with => "John")
+  page.fill_in('user_last_name', :with => "Smith")
+  page.fill_in('user_password', :with => "password")
+  page.fill_in('user_password_confirmation', :with => "password")
+  click_button('Sign up')
+  @the_user = User.last
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+
+Given(/^a Facebook user$/) do
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+    "uid" => "1111",
+    "provider" => "facebook",
+    "credentials" => {
+      "token" => "token",
+      "secret" => "secret"
+    },
+    "extra" => {
+      "raw_info" => {
+        "name" => "John_Smith",
+        "first_name" => "John",
+        "last_name" => "Smith",
+        "username" => "adamjwaite",
+        "email" => "john@mailinator.com"
+      }
+    }
+  })
+  OmniAuth.config.add_mock(:facebook, OmniAuth.config.mock_auth[:facebook])
+end
+
+
+Given(/^a signed up Facebook user$/) do
+  steps %Q{
+    Given a Facebook user
+    And I sign up with Facebook
+    Then I sign out
+  }
+end
+
+When(/^I sign in with Facebook$/) do
+  step "I sign up with Facebook"
+end
+
+When(/^I sign up with Facebook$/) do
+  visit "/users/auth/facebook"
+end
+
+Then(/^I should see "(.*?)"$/) do |content|
+  page.should have_content content
 end
 
 When(/^I sign in$/) do
   visit new_user_session_path
-  page.fill_in('email', :with => @user.email)
-  pending # express the regexp above with the code you wish you had
+  page.fill_in('user_email', :with => @the_user.email)
+  page.fill_in('user_password', :with => "password")
+  click_button('Sign in')
 end
 
-Given(/^a user is signed in$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^I visit the homepage$/) do
+  visit root_path
+end
+
+
+When(/^I visit sign in page$/) do
+  visit new_user_session_path
+end
+
+Given(/^a user is logged in$/) do
+  @the_user.should_not be_nil
+  login_as(@the_user, :scope => :user)
+end
+
+When(/^I sign out$/) do
+  click_on "SIGN OUT"
+end
+
+Then(/^I request a forgotten password$/) do
+  visit new_user_password_path
+  page.fill_in('user_email', :with => @the_user.email)
+  click_button('Send me reset password instructions')
+end
+
+When(/^I provide a new password$/) do
+  page.fill_in('user_password', :with => "password")
+  page.fill_in('user_password_confirmation', :with => "password")
+  click_button('Change my password')
+end
+
+Given(/^I request a password change without a token$/) do
+  visit edit_user_password_path
+end
+
+When(/^I attempt to reuse the password recovery link$/) do
+  steps %Q{
+    Given I request a forgotten password
+    Given I intercept an email to the user
+    Then I click on the link "Change my password" in the email
+    Then I provide a new password
+    And I sign out
+    Then I click on the link "Change my password" in the email
+    Then I provide a new password
+  }
 end

@@ -57,14 +57,18 @@ When(/^I sign up with Facebook$/) do
   visit "/users/auth/facebook"
 end
 
-Then(/^I should see "(.*?)"$/) do |content|
-  page.should have_content content
-end
-
 When(/^I sign in$/) do
   visit new_user_session_url
   page.fill_in('user_email', :with => @the_user.email)
   page.fill_in('user_password', :with => "password")
+  click_button('Sign in')
+end
+
+And(/^I sign in and ask to remember me$/) do
+  visit new_user_session_url
+  page.fill_in('user_email', :with => @the_user.email)
+  page.fill_in('user_password', :with => "password")
+  check('Remember me')
   click_button('Sign in')
 end
 
@@ -90,6 +94,12 @@ Then(/^I request a forgotten password$/) do
   visit new_user_password_url
   page.fill_in('user_email', :with => @the_user.email)
   click_button('Send me reset password instructions')
+end
+
+Given(/^I request a resend of confirmation instructions$/) do
+  visit new_user_confirmation_url 
+  page.fill_in('user_email', :with => @the_user.email)
+  click_button('Resend confirmation instructions')
 end
 
 When(/^I provide a new password$/) do

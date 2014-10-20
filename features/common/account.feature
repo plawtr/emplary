@@ -1,6 +1,5 @@
 Feature: Logging in and finding your accounts
-    As a user on the platform I want to be able to login
-
+    As a user on the platform I want to be able to login and deal with my account
 
     Scenario: a user can sign up
       When I sign up
@@ -8,60 +7,86 @@ Feature: Logging in and finding your accounts
       Given I intercept an email to the user
         Then the email should contain "You can confirm your account email through the link below"
       When I click on the link "Confirm my account" in the email
-      Then I should see "Your account was successfully confirmed"
+        Then I should see "Your account was successfully confirmed"
 
     Scenario: a user can sign up with Facebook
       Given a Facebook user 
       When I sign up with Facebook
-      Then I should see "Successfully authenticated from Facebook account." 
+        Then I should see "Successfully authenticated from Facebook account." 
 
     Scenario: a user can sign in
       Given a user 
       When I sign in
-      Then I should see "Signed in successfully."
+        Then I should see "Signed in successfully."
 
     Scenario: a user can sign in with Facebook
       Given a signed up Facebook user 
       When I sign in with Facebook
-      Then I should see "Successfully authenticated from Facebook account." 
+        Then I should see "Successfully authenticated from Facebook account." 
 
     Scenario: a signed in user cannot sign in again
       Given a user 
       And I sign in
       When I visit sign in page
-      Then I should see "You are already signed in."
+        Then I should see "You are already signed in."
 
     Scenario: an unconfirmed user cannot sign in
       Given an unconfirmed user 
       When I sign in
-      Then I should see "You have to confirm your account before continuing."
+        Then I should see "You have to confirm your account before continuing."
 
     Scenario: a user can sign out
       Given a user 
       And a user is logged in  
       And I visit the homepage
       When I sign out
-      Then I should see "Signed out successfully."
+        Then I should see "Signed out successfully."
 
     Scenario: a user can request a resend of confirmation instructions
+      Given I sign up
+      When I request a resend of confirmation instructions
+        Given I intercept an email to the user
+        Then I should see "You will receive an email with instructions about how to confirm your account in a few minutes."  
+        And the email should contain "You can confirm your account email through the link below"
+      When I click on the link "Confirm my account" in the email
+        Then I should see "Your account was successfully confirmed"
 
+    Scenario: a user cannot request a resend of confirmation instructions for confirmed email
+      Given a user 
+      And I request a resend of confirmation instructions
+        Then I should see "1 error prohibited this user from being saved: Email was already confirmed, please try signing in"
 
     Scenario: a user can recover a forgotten password
       Given a user 
       And I request a forgotten password
         Given I intercept an email to the user
-      Then I should see "You will receive an email with instructions on how to reset your password in a few minutes."  
-      And the email should contain "Someone has requested a link to change your password. You can do this through the link below."
+        Then I should see "You will receive an email with instructions on how to reset your password in a few minutes."  
+        And the email should contain "Someone has requested a link to change your password. You can do this through the link below."
       When I click on the link "Change my password" in the email
-      Then I should see "Change your password"
+        Then I should see "Change your password"
       When I provide a new password
-      Then I should see "Your password was changed successfully. You are now signed in."
+        Then I should see "Your password was changed successfully. You are now signed in."
 
     Scenario: a user cannot recover a forgotten password with an invalid recovery token
       Given a user 
       When I attempt to reuse the password recovery link
-      Then I should see "Reset password token is invalid"
+        Then I should see "Reset password token is invalid"
       
     Scenario: a user is allowed to edit password via password reset email only
       Given I request a password change without a token 
-      Then I should see "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+        Then I should see "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+
+    Scenario: a user's session expires with time
+      Given a user 
+      And I sign in
+      Given it is currently 2 days from now
+      When I visit the profile page
+      Then I should see "Your session expired. Please sign in again to continue."
+
+    Scenario: a user's session does not expire if user asks
+      Given a user 
+      And I sign in and ask to remember me
+      Given it is currently 2 days from now
+      When I visit the profile page
+      Then I should not see "Your session expired. Please sign in again to continue."
+

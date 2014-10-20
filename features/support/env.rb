@@ -14,7 +14,7 @@ require 'pry'
 require 'vcr'
 require 'capybara/email'
 require 'webmock/cucumber'
-
+require 'cucumber/timecop'
 require 'simplecov'
 
 SimpleCov.start 'rails' if ENV["COVERAGE"] == "true"

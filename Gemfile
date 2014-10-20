@@ -38,6 +38,8 @@ end
 gem 'devise', '~> 3.2.4'
 gem 'omniauth-facebook'
 gem 'rails_admin'
+gem 'cancan'
+gem 'paper_trail', '~> 3.0.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

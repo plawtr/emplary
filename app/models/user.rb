@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
+  has_paper_trail
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist

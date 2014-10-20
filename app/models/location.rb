@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   belongs_to :locatable, :polymorphic => true
-  
+
+  has_paper_trail
+
   acts_as_mappable :default_units => :kms,
                    :default_formula => :sphere,
                    :distance_field_name => :distance,

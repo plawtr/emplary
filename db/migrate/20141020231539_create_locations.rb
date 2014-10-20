@@ -20,6 +20,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :district
       t.string :country
       t.integer :accuracy
+      t.references :locatable, polymorphic: true
 
       t.timestamps
     end

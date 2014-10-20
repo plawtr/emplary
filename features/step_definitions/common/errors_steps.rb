@@ -19,5 +19,8 @@ When(/^I visit a page that has an error$/) do
 end
 
 When(/^I visit an unauthorized page$/) do
-  post "/users/sign_in", email: "wrong_email@wrong.com", password: "wrong_password"
+  visit rails_admin_url
+  steps %Q{
+    When I sign in
+  }
 end

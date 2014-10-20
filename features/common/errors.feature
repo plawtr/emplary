@@ -10,3 +10,9 @@ Feature: Inspecting the error pages
     Scenario: Visit a page that has an error
       When I visit a page that has a server error
       Then I should see a "500" error page
+
+    @allow-rescue
+    Scenario: Visit an unauthorized page
+      Given a user
+      When I visit an unauthorized page
+      Then I should see a "401" error page

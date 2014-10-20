@@ -32,7 +32,7 @@ Given(/^a Facebook user$/) do
         "name" => "John_Smith",
         "first_name" => "John",
         "last_name" => "Smith",
-        "username" => "adamjwaite",
+        "username" => "jsmith",
         "email" => "john@mailinator.com"
       }
     }

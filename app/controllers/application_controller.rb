@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def results
+     # loc=GoogleGeocoder.geocode('e8 4dg')
   end
 
   def format_errors(error_messages)

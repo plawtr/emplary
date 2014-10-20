@@ -1,0 +1,9 @@
+Ocado postcode checker
+
+uri = URI.parse("https://www.ocado.com/webshop/postcodeCheckPerform.do?postcode=IV3+5TD")
+response = Net::HTTP.get_response(uri)
+@doc = Nokogiri::HTML(response.body)
+@doc.css("h4").first.text
+
+"We don't deliver to IV3 5TD yet" 
+"We deliver to e8 4dg."

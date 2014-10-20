@@ -10,3 +10,26 @@ class Location < ActiveRecord::Base
                    :lng_column_name => :lng
 
 end
+
+
+# class Company < ActiveRecord::Base
+#   has_one :location, :as => :locatable  # also works for belongs_to associations
+#   acts_as_mappable :through => :location
+# end
+# Then you can still call:
+
+# Company.within(distance, :origin => @somewhere)
+# You can also give :through a hash if your location is nested deep. For example, given:
+
+# class House
+#   acts_as_mappable
+# end
+
+# class Family
+#   belongs_to :house
+# end
+
+# class Person
+#   belongs_to :family
+#   acts_as_mappable :through => { :family => :house }
+# end

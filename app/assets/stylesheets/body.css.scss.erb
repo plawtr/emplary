@@ -1,5 +1,7 @@
+//= depend_on_asset "logo30x35.png"
+
 .top-bar .name h1 a:before {
-    background-image: image-url('logo30x35.png');
+    background-image: url(<%= asset_data_uri 'logo30x35.png' %>);
     background-repeat: no-repeat;
     content: "";
     display: inline-block;

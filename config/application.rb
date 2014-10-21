@@ -29,5 +29,12 @@ module Emplary
 
     config.exceptions_app = self.routes
     # config.app_domain = "www.emplary.com"
+
+    config.action_dispatch.default_headers.merge!(
+      {
+        'Access-Control-Allow-Origin' => 'http://www.emplary.com',
+        'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+      })
+
   end
 end

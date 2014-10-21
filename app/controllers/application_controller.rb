@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
-  after_filter :set_access_control_headers
-
 
   def index
 	end
@@ -27,11 +25,6 @@ class ApplicationController < ActionController::Base
     output = []
     error_messages.each {|k, v| output << "#{k.to_s.capitalize} #{v.join(", ")}."}
     output
-  end
-
-  def set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = "http://www.emplary.com"
-    headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
   end
 
   protected

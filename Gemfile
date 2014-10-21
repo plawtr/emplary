@@ -40,6 +40,7 @@ gem 'omniauth-facebook'
 gem 'rails_admin'
 gem 'cancan'
 gem 'paper_trail', '~> 3.0.6'
+gem 'font_assets'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

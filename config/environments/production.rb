@@ -91,4 +91,6 @@ Emplary::Application.configure do
   config.log_level    = :info
 
   config.action_mailer.default_url_options = { :host => 'www.emplary.com' }
+
+  config.font_assets.origin = 'http://www.emplary.com'
 end

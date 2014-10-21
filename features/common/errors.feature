@@ -15,4 +15,4 @@ Feature: Inspecting the error pages
     Scenario: Visit an unauthorized page
       Given a user
       When I visit an unauthorized page
-      Then I should see a "401" error page
+      Then I should see a "500" error page

@@ -29,11 +29,5 @@ module Emplary
 
     config.exceptions_app = self.routes
     # config.app_domain = "www.emplary.com"
-
-    config.action_dispatch.default_headers = {
-      'X-Frame-Options' => '',
-      'Access-Control-Allow-Origin' => 'www.emplary.com',
-      'Access-Control-Request-Method' => '*'
-    }
   end
 end

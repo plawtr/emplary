@@ -69,6 +69,10 @@ gem 'gibbon'
 # gem 'acts-as-taggable-on'
 # gem 'rest_client'
 
+group :staging, :production do
+  gem "rails_12factor"
+end
+
 group :development do
 	gem 'better_errors' 
 	gem 'quiet_assets' 

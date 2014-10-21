@@ -6,7 +6,6 @@ ruby '2.1.1'
 gem 'rails', '4.0.9'
 gem 'unicorn'
 gem 'newrelic_rpm'
-gem 'rack-cors', :require => 'rack/cors'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -17,6 +16,9 @@ gem 'sass-rails', '~> 4.0.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem "fog", "~>1.20", require: "fog/aws/storage"
+gem 'asset_sync'
+
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'

@@ -6,6 +6,7 @@ ruby '2.1.1'
 gem 'rails', '4.0.9'
 gem 'unicorn'
 gem 'newrelic_rpm'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'

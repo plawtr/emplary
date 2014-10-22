@@ -19,3 +19,4 @@
 .elasticbeanstalk/
 /config/initializers/unlimited_strength_cryptography_keep.rb
 *.env
+*.DS_Store

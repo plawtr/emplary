@@ -5,10 +5,11 @@ Emplary::Application.routes.draw do
   
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users, only: [:new, :create]
-  post 'users/create' 
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
+    resources :results, only: [:index]
 
+  post 'users/create' 
   get 'terms' => 'application#terms'
   get 'pricing' => 'application#pricing'
   get 'sessions/new' => 'application#login'

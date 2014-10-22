@@ -24,6 +24,7 @@ World(Warden::Test::Helpers)
 World(Devise::TestHelpers)
 
 World(Capybara::Email::DSL)
+Capybara.server_port = 54163
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -49,11 +50,11 @@ ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
-begin
-  DatabaseCleaner.strategy = :transaction
-rescue NameError
-  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
-end
+# begin
+#   DatabaseCleaner.strategy = :transaction
+# rescue NameError
+#   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+# end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
@@ -79,6 +80,8 @@ Before do
   DatabaseCleaner.clean
   DatabaseCleaner.start
   Warden.test_mode!
+  default_url_options[:host] = "localhost"
+  default_url_options[:port] = 54163
   # @request.env["devise.mapping"] = Devise.mappings[:user] # If using Devise
   # @request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook] 
 end

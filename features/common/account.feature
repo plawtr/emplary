@@ -6,6 +6,7 @@ Feature: Logging in and finding your accounts
         Then I should see "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
       Given I intercept an email to the user
         Then the email should contain "You can confirm your account email through the link below"
+        And I should be the user on the platform
       When I click on the link "Confirm my account" in the email
         Then I should see "Your account was successfully confirmed"
 
@@ -89,4 +90,5 @@ Feature: Logging in and finding your accounts
       Given it is currently 2 days from now
       When I visit the profile page
       Then I should not see "Your session expired. Please sign in again to continue."
+
 

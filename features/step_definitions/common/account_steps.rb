@@ -1,6 +1,13 @@
 
 Given(/^a user$/) do
-  @the_user = FactoryGirl.create(:user, :confirmed_at => Time.now)
+  @the_user = FactoryGirl.create(:user)
+  @the_user.confirm!
+end
+
+Given(/^the user has a password$/) do
+  @the_user.password = "password"
+  @the_user.password_confirmation = "password"
+  @the_user.save
 end
 
 Given(/^an unconfirmed user$/) do
@@ -18,6 +25,11 @@ When(/^I sign up$/) do
   @the_user = User.last
 end
 
+Then(/^I should be the user on the platform$/) do
+  @the_user.email.should eq "john@mailinator.com" 
+  @the_user.first_name.should eq "John"
+  @the_user.last_name.should eq  "Smith"
+end
 
 Given(/^a Facebook user$/) do
   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
@@ -123,3 +135,5 @@ When(/^I attempt to reuse the password recovery link$/) do
     Then I provide a new password
   }
 end
+
+

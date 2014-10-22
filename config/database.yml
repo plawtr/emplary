@@ -26,7 +26,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: emplary_dev
+  database: emplary_test
   pool: 5
   host: localhost
 

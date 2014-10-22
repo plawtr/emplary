@@ -84,10 +84,6 @@ And(/^I sign in and ask to remember me$/) do
   click_button('Sign in')
 end
 
-Given(/^I visit the homepage$/) do
-  visit root_url
-end
-
 
 When(/^I visit sign in page$/) do
   visit new_user_session_url

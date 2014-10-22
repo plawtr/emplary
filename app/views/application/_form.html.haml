@@ -6,10 +6,11 @@
       %h1.text-center{style: "font-family: 'Roboto Condensed', sans; font-size: 3.5em; padding-top:30px; font-weight: bold; line-height: 1em;"} Discover great food now!
       %br
       %br
-      = form_tag('/users/create') do
+      = form_tag('/results') do
         .large-8.large-centered.columns
           .row.collapse
             .small-6.columns
               = text_field_tag :postcode, nil, :placeholder => "Zip code", :required => true
             .small-4.columns
-              %a.button.postfix{href: "/results" } GO
+              = submit_tag "GO", :class => "button postfix"
+

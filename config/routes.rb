@@ -7,7 +7,7 @@ Emplary::Application.routes.draw do
   resources :users, only: [:new, :create]
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
-    resources :results, only: [:index]
+  resources :results, only: :create
 
   post 'users/create' 
   get 'terms' => 'application#terms'

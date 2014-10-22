@@ -13,3 +13,15 @@ end
 When(/I inspect the page/) do
   binding.pry
 end
+
+Given(/^I visit the homepage$/) do
+  visit root_url
+end
+
+Then(/^I should be on the (.+?) page$/) do |page_name|
+  URI.parse(current_url).path.should include send("#{page_name.downcase.gsub(' ','_')}_path")
+end
+
+When(/^with a cassette named "([^"]*)" (.*)$/) do |cassette_name, step|
+  VCR.use_cassette(cassette_name) { step step }
+end

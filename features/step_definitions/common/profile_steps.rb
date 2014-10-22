@@ -20,7 +20,6 @@ When(/^I edit my information$/) do
   page.fill_in('user_current_password', :with => "password")
   click_button('Update')
   @the_user.reload
-  binding.pry
 end
 
 Then(/^my information should be edited$/) do
@@ -28,4 +27,20 @@ Then(/^my information should be edited$/) do
     Given I visit the profile page
     Then my information should be prefilled
   }
+end
+
+When(/^I edit my password$/) do
+  page.fill_in('user_email', :with => "new_email@mailinator.com")
+  page.fill_in('user_password', :with => "new_password")
+  page.fill_in('user_password_confirmation', :with => "new_password")
+  page.fill_in('user_current_password', :with => "password")
+  click_button('Update')
+  @the_user.reload
+end
+
+Then(/^I sign in with the new password$/) do
+  visit new_user_session_url
+  page.fill_in('user_email', :with => @the_user.email)
+  page.fill_in('user_password', :with => "new_password")
+  click_button('Sign in')
 end

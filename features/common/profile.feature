@@ -12,3 +12,11 @@ Feature: Managing your profile
       When I edit my information 
         Then I should see "You updated your account successfully"
         And my information should be edited
+
+    Scenario: a user can change his/her password
+      When I visit the profile page
+        And I edit my password 
+        Then I should see "You updated your account successfully"
+      When I sign out 
+        And I sign in with the new password
+        Then I should see "Signed in successfully."

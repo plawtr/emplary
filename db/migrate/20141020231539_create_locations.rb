@@ -16,6 +16,10 @@ class CreateLocations < ActiveRecord::Migration
       t.string :full_address
       t.decimal :lat
       t.decimal :lng
+      t.decimal :swlat
+      t.decimal :swlng
+      t.decimal :nelat
+      t.decimal :nelng
       t.string :provider
       t.string :district
       t.string :country
@@ -25,6 +29,8 @@ class CreateLocations < ActiveRecord::Migration
       t.timestamps
     end
     add_index :locations, [:lat, :lng]
+    add_index :locations, [:swlat, :swlng]
+    add_index :locations, [:nelat, :nelng]
 
   end
 end

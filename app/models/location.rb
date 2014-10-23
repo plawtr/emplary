@@ -29,3 +29,42 @@ end
 #   belongs_to :family
 #   acts_as_mappable :through => { :family => :house }
 # end
+
+class Source 
+  # online groceries OR eating out
+  # name:string 
+  has_many :providers
+  has_many :categories, through: :providers
+  has_many :items, through: :providers
+
+end
+
+
+class Provider
+  # Ocado
+  # name:string
+  has_one :location, :as => :locatable
+  acts_as_mappable :through => :location
+
+  has_and_belongs_to_many :categories
+  has_many :items, through: :categories 
+
+end
+
+class Category
+  # vegetables
+  # name:string 
+  has_and_belongs_to_many :providers
+  has_many :items
+end
+
+
+class Item
+  # asparagus
+  # name:string link:text tooltip:text cooking_link:text
+  belongs_to :category
+  delegate :provider, :to => :category, :allow_nil => false
+  delegate :source, :to => :provider, :allow_nil => false
+  acts_as_mappable :through => { :category => :provider }
+end
+

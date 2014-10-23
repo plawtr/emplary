@@ -17,9 +17,8 @@ Feature: Getting location based on zipcode
       |  "EC2A3 PT"|  "London EC2A 3PT, UK"           |
       |  "E84dg "  |  "London E8 4DG, UK"             |
       |  "IV3 5TD" |  "Inverness, Inverness, Highland IV3 5TD, UK" |
-      |  "sw1E 2jl"|  "London SW1E, UK" |
-       # last one is partially correct
-
+      |  "sw1E 2jl"|  "London SW1E, UK"               |
+       # last one is partially correct but resolves to broader post code
 
   Scenario Outline: incorrect zipcodes/postcodes
     When with a cassette named "incorrect_zipcode_lookup_from_google_cassette" I provide <postcode> as a zipcode
@@ -31,4 +30,11 @@ Feature: Getting location based on zipcode
       |  "incorrect" |  
       |  "90219"     | 
       |  ""          | 
-      |  "bc32 yab"   | 
+      |  "bc32 yab"  | 
+
+  Scenario: correct London postcode results in a page with structured results
+    When with a cassette named "London_postcode_lookup_from_google_cassette" I provide "EC2A3PT" as a zipcode
+    Then I should see "Results in London EC2A 3PT, UK" 
+    And I should see "In your area we recommend: Ocado"
+    And I should see "Groceries online"
+    And I should see "Vegetables Dairy Eggs Fish Meat Nuts Oils and fats"

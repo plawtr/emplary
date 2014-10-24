@@ -48,11 +48,13 @@ ActiveRecord::Schema.define(version: 20141023134449) do
     t.text     "tooltip"
     t.text     "cooking_link"
     t.integer  "category_id",  null: false
+    t.integer  "provider_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "items", ["category_id"], name: "index_items_on_category_id", unique: true, using: :btree
+  add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
+  add_index "items", ["provider_id"], name: "index_items_on_provider_id", unique: true, using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "street_address"

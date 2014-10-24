@@ -6,9 +6,11 @@ class CreateItems < ActiveRecord::Migration
       t.text :tooltip
       t.text :cooking_link
       t.integer :category_id, :null => false
+      t.integer :provider_id, :null => false
 
       t.timestamps
     end
-    add_index :items, :category_id, unique: true
+    add_index :items, :category_id
+    add_index :items, :provider_id, unique: true
   end
 end

@@ -8,6 +8,7 @@ class ResultsController < ApplicationController
   def create
     @full_address = address_factory_for(params[:postcode], session[:geo_location])
     if @full_address 
+      @result = ResultsPresenter.new
       render action: 'index'
     else
       redirect_to root_url, alert: "Invalid zipcode."

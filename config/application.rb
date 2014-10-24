@@ -30,6 +30,8 @@ module Emplary
 
     config.exceptions_app = self.routes
     # config.app_domain = "www.emplary.com"
-
+    config.after_initialize do |app|
+      app.config.paths.add 'app/presenters', :eager_load => true
+    end
   end
 end

@@ -9,6 +9,8 @@ FactoryGirl.define do
     link "www.ocado.com/asparagus"
     tooltip "Asparagus is good"
     cooking_link "www.bbc.co.uk/asparagus"
+    category_id nil
+    provider_id nil
 
   end
 end

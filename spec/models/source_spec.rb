@@ -52,5 +52,9 @@ RSpec.describe Source, :type => :model do
     expect(online_source.items).not_to be_nil
     expect(online_source.items.count).to eq 1
   end
+
+  it "should be able to access providers" do
+    expect(online_source.providers.count).to eq 1
+  end
 end
 

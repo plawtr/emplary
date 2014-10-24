@@ -9,8 +9,8 @@ FactoryGirl.define do
 
     factory :category_with_item do
       after(:create) do |c, _|
-        item = FactoryGirl.build(:item)
-        c.items << item
+        provider = FactoryGirl.create(:provider)
+        item = FactoryGirl.create(:item, category_id: c.id, provider_id: provider.id)
       end
     end
   end

@@ -4,16 +4,20 @@ FactoryGirl.define do
       "Ocado#{n}"
   end
 
+  sequence :website do |n|
+      "www#{n}.testsite.com"
+  end
+
   factory :provider do
     name { generate(:store) }
-    website { generate(:store) }
+    website { generate(:website) }
 
     factory :provider_with_dependents do
-      after(:build) do |p, _|
+      after(:create) do |p, _|
 
-        location = FactoryGirl.create(:location)
-        category = FactoryGirl.create :category_with_item
-
+        location = FactoryGirl.create :location 
+        category = FactoryGirl.create :category
+        item = FactoryGirl.create(:item, category_id: category.id, provider_id: p.id)
         p.locations << location
         p.categories << category
       end

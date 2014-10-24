@@ -6,10 +6,9 @@
 .row
   .large-10.large-offset-2.columns
     %dl.tabs{"data-tab" => ""}
-      - @result.source_names.each_with_index do |source_name, index|
+      - @result.sources.each.with_index do |source, index|
         %dd{:class => "#{"active" if index == 0}"}
-          %a{:href => "##{@result.url_encode_for(source_name)}"}= source_name 
-- binding.pry          
+          %a{:href => "##{@result.url_encode_for(source.name)}"}= source.name         
 .row
   .large-10.large-offset-1.columns      
     .tabs-content
@@ -32,6 +31,22 @@
                                 %span.has-tip{ "aria-haspopup" => "true", "data-tooltip" => "", :title => "#{item.tooltip}", style: "margin-left: 10px"} ?
                               .small-6.large-6.columns 
                                 %a{href: "#{item.cooking_link}"} How to cook
+                  %dd.accordion-navigation
+                    %a{:href => "#favorites"} Your favorites 
+                    #favorites.content
+                      %p Nothing here yet. 
+                      .row
+                        .small-6.columns
+                          %p Already got an account?
+                          %a{href: "/sessions/new"} Sign in &raquo
+                        .small-6.columns
+                          %p 
+                            %br
+                          %a{href: "/users/new"} Sign up &raquo
+                %br
+                %p We believe ordering groceries online is generally the healthiest easy choice; if you have good food in the fridge, you'll be less tempted by bad options when you're hungry.
+
+
 -#             .row
 -#               .small-6.large-6.columns 
 -#                 %a{href: "http://www.ocado.com/webshop/product/Organic-Broccoli-Waitrose/23770011?from=search&tags=%7C20000&param=organic+broccoli&parentContainer=SEARCHorganic+broccol_SHELFVIEW", target:"_blank"} Broccoli
@@ -158,19 +173,6 @@
 -#             .small-6.large-6.columns 
 -#               %a{href: "http://www.ocado.com/webshop/product/Mr-Organic-Extra-Virgin-Olive-Oil/73529011?from=search&tags=%7C20000&param=organic+olive+oil&parentContainer=SEARCHorganic+olive+o_SHELFVIEW", target:"_blank"} Organic olive oil
 -#               %span.has-tip{"aria-haspopup" => "true", "data-tooltip" => "", :title => "Great for salad dressings; we do not recommend cooking with it because it is damaged by high temperature.  We believe coconut oil or clarified grass-fed butter (in moderation) are better for cooking.", style: "margin-left: 10px"} ?
--#       %dd.accordion-navigation
--#         %a{:href => "#favorites"} Your favorites 
--#         #favorites.content
--#           %p Nothing here yet. 
--#           .row
--#             .small-6.columns
--#               %p Already got an account?
--#               %a{href: "/sessions/new"} Sign in &raquo
--#             .small-6.columns
--#               %p 
--#                 %br
--#               %a{href: "/users/new"} Sign up &raquo
--#     %br
--#     %p We believe ordering groceries online is generally the healthiest easy choice; if you have good food in the fridge, you'll be less tempted by bad options when you're hungry.
+
           
            

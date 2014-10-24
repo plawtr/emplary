@@ -14,12 +14,12 @@ class CreateLocations < ActiveRecord::Migration
       t.string :province
       t.string :precision
       t.string :full_address
-      t.decimal :lat
-      t.decimal :lng
-      t.decimal :swlat
-      t.decimal :swlng
-      t.decimal :nelat
-      t.decimal :nelng
+      t.float  :lat
+      t.float  :lng
+      t.float  :swlat
+      t.float  :swlng
+      t.float  :nelat
+      t.float  :nelng
       t.string :provider
       t.string :district
       t.string :country

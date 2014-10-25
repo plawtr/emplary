@@ -3,6 +3,7 @@ Feature: Getting location based on zipcode
 
   Background:
     Given I visit the homepage
+    And a source with provider, category and item exists
 
   Scenario Outline: correct zipcodes/postcodes
     When with a cassette named "zipcode_lookup_from_google_cassette" I provide <postcode> as a zipcode
@@ -34,7 +35,16 @@ Feature: Getting location based on zipcode
 
   Scenario: correct London postcode results in a page with structured results
     When with a cassette named "London_postcode_lookup_from_google_cassette" I provide "EC2A3PT" as a zipcode
-    Then I should see "Results in London EC2A 3PT, UK" 
-    And I should see "In your area we recommend: Ocado"
-    And I should see "Groceries online"
-    And I should see "Vegetables Dairy Eggs Fish Meat Nuts Oils and fats"
+      Then I should see "Results in London EC2A 3PT, UK" 
+      And I should see provider name
+      And I should see source name
+      And I should see category name
+      And I should see item name
+    Given another source with provider, category and item exists 
+      And I visit the homepage
+      When with a cassette named "London_postcode_lookup_from_google_cassette" I provide "EC2A3PT" as a zipcode
+        Then I should see provider name
+        And I should see source name
+        And I should see category name
+        And I should see item name
+

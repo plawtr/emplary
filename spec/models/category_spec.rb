@@ -25,9 +25,7 @@ RSpec.describe Category, :type => :model do
 
   it "should have many items" do
     expect(veggies.items.count).to eq 1
-        binding.pry
     veggies.items << asparagus
-
     expect(veggies.items.count).to eq 2
   end
 

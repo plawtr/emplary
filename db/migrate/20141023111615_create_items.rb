@@ -11,6 +11,6 @@ class CreateItems < ActiveRecord::Migration
       t.timestamps
     end
     add_index :items, :category_id
-    add_index :items, :provider_id, unique: true
+    add_index :items, :provider_id
   end
 end

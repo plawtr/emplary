@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023134449) do
+ActiveRecord::Schema.define(version: 20141025093822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20141023134449) do
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
-  add_index "items", ["provider_id"], name: "index_items_on_provider_id", unique: true, using: :btree
+  add_index "items", ["provider_id"], name: "index_items_on_provider_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "street_address"
@@ -109,9 +109,10 @@ ActiveRecord::Schema.define(version: 20141023134449) do
   add_index "providers_sources", ["source_id", "provider_id"], name: "index_providers_sources_on_source_id_and_provider_id", unique: true, using: :btree
 
   create_table "sources", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   add_index "sources", ["name"], name: "index_sources_on_name", unique: true, using: :btree

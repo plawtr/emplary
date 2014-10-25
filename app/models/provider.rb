@@ -1,6 +1,6 @@
 class Provider < ActiveRecord::Base
   # Ocado
-  
+  has_paper_trail  
   has_many :locations, :as => :locatable
   acts_as_mappable :through => :locations
 

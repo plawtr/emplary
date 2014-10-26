@@ -21,6 +21,10 @@ class ResultsController < ApplicationController
   def address_factory_for(postcode, geolocation)
     location = valid?(postcode) || session[:geo_location] || cookies[:geo_session]
 
+    puts "**"*50
+    puts "session[:geo_location]: #{session[:geo_location]} "
+    puts "cookies[:geo_session] : #{cookies[:geo_session]} "
+
     if location.nil? 
       return nil
     else 

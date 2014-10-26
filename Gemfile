@@ -7,6 +7,7 @@ gem 'rails', '4.0.9'
 gem 'pg'
 
 gem 'unicorn'
+gem 'unicorn-worker-killer'
 gem 'newrelic_rpm'
 
 gem 'gibbon'

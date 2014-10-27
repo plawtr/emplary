@@ -35,4 +35,11 @@ Emplary::Application.configure do
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG')
   config.log_level    = :info
+
+  # mock IP address for geokit-rails
+  class ActionDispatch::Request
+    def remote_ip
+      "82.35.196.222" 
+    end
+  end
 end

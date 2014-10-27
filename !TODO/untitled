@@ -7,3 +7,7 @@ response = Net::HTTP.get_response(uri)
 
 "We don't deliver to IV3 5TD yet" 
 "We deliver to e8 4dg."
+
+Waitrose
+
+https://www.waitrose.com/shop/AjaxLogon

@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.geoplugin.net/xml.gp?ip=82.35.196.222
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - geoPlugin/3.2.6
+      Date:
+      - Mon, 27 Oct 2014 12:08:57 GMT
+      Content-Type:
+      - text/html; charset=iso-8859-1
+      Content-Length:
+      - '280'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>403 Forbidden</title>
+        </head><body>
+        <h1>Forbidden</h1>
+        <p>You don't have permission to access /xml.gp
+        on this server.</p>
+        <hr>
+        <address>Apache Server at cluster4.geoplugin.net Port 80</address>
+        </body></html>
+    http_version: 
+  recorded_at: Mon, 27 Oct 2014 12:08:57 GMT
+- request:
+    method: get
+    uri: http://api.hostip.info/get_html.php?ip=82.35.196.222&position=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 27 Oct 2014 12:08:57 GMT
+      Server:
+      - LiteSpeed
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/5.4.26
+      Content-Type:
+      - text/plain; charset=iso-8859-1
+      Expires:
+      - Tue, 28 Oct 2014 12:08:57 GMT
+      Last-Modified:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Pragma:
+      - "!invalid"
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '92'
+      Vary:
+      - User-Agent
+    body:
+      encoding: UTF-8
+      string: "Country: UNITED KINGDOM (GB)\nCity: (Unknown city)\n\nLatitude: \nLongitude:
+        \nIP: 82.35.196.222\n"
+    http_version: 
+  recorded_at: Mon, 27 Oct 2014 12:08:57 GMT
+- request:
+    method: get
+    uri: https://maps.google.com/maps/api/geocode/json?address=90219&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 27 Oct 2014 12:08:57 GMT
+      Expires:
+      - Tue, 28 Oct 2014 12:08:57 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICAicmVzdWx0cyIgOiBbCiAgICAgIHsKICAgICAgICAgImFkZHJlc3Nf
+        Y29tcG9uZW50cyIgOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAg
+        ImxvbmdfbmFtZSIgOiAiOTAyMTkiLAogICAgICAgICAgICAgICAic2hvcnRf
+        bmFtZSIgOiAiOTAyMTkiLAogICAgICAgICAgICAgICAidHlwZXMiIDogWyAi
+        cG9zdGFsX2NvZGUiIF0KICAgICAgICAgICAgfSwKICAgICAgICAgICAgewog
+        ICAgICAgICAgICAgICAibG9uZ19uYW1lIiA6ICJMaWh1bGEgUGFyaXNoIiwK
+        ICAgICAgICAgICAgICAgInNob3J0X25hbWUiIDogIkxpaHVsYSBQYXJpc2gi
+        LAogICAgICAgICAgICAgICAidHlwZXMiIDogWyAiYWRtaW5pc3RyYXRpdmVf
+        YXJlYV9sZXZlbF8yIiwgInBvbGl0aWNhbCIgXQogICAgICAgICAgICB9LAog
+        ICAgICAgICAgICB7CiAgICAgICAgICAgICAgICJsb25nX25hbWUiIDogIkzD
+        pMOkbmVtYWEiLAogICAgICAgICAgICAgICAic2hvcnRfbmFtZSIgOiAiTMOk
+        w6RuZW1hYSIsCiAgICAgICAgICAgICAgICJ0eXBlcyIgOiBbICJhZG1pbmlz
+        dHJhdGl2ZV9hcmVhX2xldmVsXzEiLCAicG9saXRpY2FsIiBdCiAgICAgICAg
+        ICAgIH0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgImxvbmdfbmFt
+        ZSIgOiAiRXN0b25pYSIsCiAgICAgICAgICAgICAgICJzaG9ydF9uYW1lIiA6
+        ICJFRSIsCiAgICAgICAgICAgICAgICJ0eXBlcyIgOiBbICJjb3VudHJ5Iiwg
+        InBvbGl0aWNhbCIgXQogICAgICAgICAgICB9CiAgICAgICAgIF0sCiAgICAg
+        ICAgICJmb3JtYXR0ZWRfYWRkcmVzcyIgOiAiOTAyMTkgTMOkw6RuZW1hYSwg
+        RXN0b25pYSIsCiAgICAgICAgICJnZW9tZXRyeSIgOiB7CiAgICAgICAgICAg
+        ICJib3VuZHMiIDogewogICAgICAgICAgICAgICAibm9ydGhlYXN0IiA6IHsK
+        ICAgICAgICAgICAgICAgICAgImxhdCIgOiA1OC43MDUwMjMxLAogICAgICAg
+        ICAgICAgICAgICAibG5nIiA6IDIzLjgyNjkxOTkKICAgICAgICAgICAgICAg
+        fSwKICAgICAgICAgICAgICAgInNvdXRod2VzdCIgOiB7CiAgICAgICAgICAg
+        ICAgICAgICJsYXQiIDogNTguNjc1Njk5OSwKICAgICAgICAgICAgICAgICAg
+        ImxuZyIgOiAyMy43MjgwMjgyCiAgICAgICAgICAgICAgIH0KICAgICAgICAg
+        ICAgfSwKICAgICAgICAgICAgImxvY2F0aW9uIiA6IHsKICAgICAgICAgICAg
+        ICAgImxhdCIgOiA1OC42OTAyMDk5MDAwMDAwMSwKICAgICAgICAgICAgICAg
+        ImxuZyIgOiAyMy43NzU4Njg4CiAgICAgICAgICAgIH0sCiAgICAgICAgICAg
+        ICJsb2NhdGlvbl90eXBlIiA6ICJBUFBST1hJTUFURSIsCiAgICAgICAgICAg
+        ICJ2aWV3cG9ydCIgOiB7CiAgICAgICAgICAgICAgICJub3J0aGVhc3QiIDog
+        ewogICAgICAgICAgICAgICAgICAibGF0IiA6IDU4LjcwNTAyMzEsCiAgICAg
+        ICAgICAgICAgICAgICJsbmciIDogMjMuODI2OTE5OQogICAgICAgICAgICAg
+        ICB9LAogICAgICAgICAgICAgICAic291dGh3ZXN0IiA6IHsKICAgICAgICAg
+        ICAgICAgICAgImxhdCIgOiA1OC42NzU2OTk5LAogICAgICAgICAgICAgICAg
+        ICAibG5nIiA6IDIzLjcyODAyODIKICAgICAgICAgICAgICAgfQogICAgICAg
+        ICAgICB9CiAgICAgICAgIH0sCiAgICAgICAgICJ0eXBlcyIgOiBbICJwb3N0
+        YWxfY29kZSIgXQogICAgICB9CiAgIF0sCiAgICJzdGF0dXMiIDogIk9LIgp9
+        Cg==
+    http_version: 
+  recorded_at: Mon, 27 Oct 2014 12:08:58 GMT
+recorded_with: VCR 2.9.3

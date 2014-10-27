@@ -6,6 +6,7 @@ end
 Given(/^a source with provider, category and item exists$/) do
   @the_source = FactoryGirl.create :source_with_dependents
 end
+
 Given(/^another source with provider, category and item exists$/) do
   @the_source = FactoryGirl.create :source_with_dependents
 end
@@ -24,4 +25,12 @@ end
 
 Then(/^I should see item name$/) do
   page.should have_content @the_source.items.first.name
+end
+
+Given(/^my IP resolves to London$/) do 
+  class ActionDispatch::Request
+    def remote_ip
+      "82.35.196.222" 
+    end
+  end
 end

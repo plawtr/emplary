@@ -1,7 +1,7 @@
 class ResultsPresenter
 
-  def initialize(results = nil)
-    @result = result
+  def initialize(user_location)
+    @user_location = user_location
   end
 
   def sources 
@@ -16,7 +16,7 @@ class ResultsPresenter
     string.parameterize.underscore 
   end
 
-  def method_missing(method)
-    @result.send(method) rescue nil
+  def full_address
+    @user_location.full_address || "#{@user_location.city.to_s} #{@user_location.state_code}, #{@user_location.country}" 
   end
 end

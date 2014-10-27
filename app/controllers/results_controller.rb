@@ -6,31 +6,23 @@ class ResultsController < ApplicationController
   end
 
   def create
-    @full_address = address_factory_for(params[:postcode], session[:geo_location])
-    if @full_address 
-      @result = ResultsPresenter.new
+    @user_location = location_factory_for(params[:postcode])
+    if @user_location  
+      @result = ResultsPresenter.new @user_location 
       render action: 'index'
+      @result = nil
     else
-      redirect_to root_url, alert: "Invalid zipcode."
+      redirect_to root_url, alert: "Invalid US/UK zipcode."
     end
+
   end
 
-
   private
-  
-  def address_factory_for(postcode, geolocation)
-    location = valid?(postcode) || session[:geo_location] || cookies[:geo_session]
 
-    puts "**"*50
-    puts "session[:geo_location]: #{session[:geo_location]} "
-    puts "cookies[:geo_session] : #{cookies[:geo_session]} "
-
-    if location.nil? 
-      return nil
-    else 
-      address = Geokit::Geocoders::MultiGeocoder.geocode(location).full_address
-      return address if located_in_UK_or_US? address 
-    end
+  def location_factory_for(postcode)
+    location = valid?(postcode) ? Geokit::Geocoders::MultiGeocoder.geocode(valid?(postcode)) : session[:geo_location]    
+    flash[:notice] = "Invalid US/UK zipcode, using location from your IP address." if location == session[:geo_location] 
+    return location if (not location.nil?) && location.success && in_UK_or_US?(location) 
     return nil
   end
 
@@ -38,8 +30,9 @@ class ResultsController < ApplicationController
     GoingPostal.postcode?(postcode, "US") || GoingPostal.postcode?(postcode, "GB") 
   end
 
-  def located_in_UK_or_US? address
-    address.include?("UK") || address.include?("US")
+  def in_UK_or_US? location
+    %w(UK US GB).each {|country| return true if location.inspect.include? country}
+    return false
   end
 
 end

@@ -217,4 +217,67 @@ http_interactions:
         }
     http_version: 
   recorded_at: Wed, 22 Oct 2014 19:23:53 GMT
+- request:
+    method: get
+    uri: http://www.geoplugin.net/xml.gp?ip=82.35.196.222
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - geoPlugin/3.2.6
+      Date:
+      - Mon, 27 Oct 2014 10:52:52 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1154'
+      Connection:
+      - close
+      Cache-Control:
+      - max-age=0
+      Expires:
+      - Mon, 27 Oct 2014 10:52:52 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGdlb1Bs
+        dWdpbj4KCTxnZW9wbHVnaW5fcmVxdWVzdD44Mi4zNS4xOTYuMjIyPC9nZW9w
+        bHVnaW5fcmVxdWVzdD4KCTxnZW9wbHVnaW5fc3RhdHVzPjIwMDwvZ2VvcGx1
+        Z2luX3N0YXR1cz4KCTxnZW9wbHVnaW5fY3JlZGl0PlNvbWUgb2YgdGhlIHJl
+        dHVybmVkIGRhdGEgaW5jbHVkZXMgR2VvTGl0ZSBkYXRhIGNyZWF0ZWQgYnkg
+        TWF4TWluZCwgYXZhaWxhYmxlIGZyb20gJmx0O2EgaHJlZj1cJ2h0dHA6Ly93
+        d3cubWF4bWluZC5jb21cJyZndDtodHRwOi8vd3d3Lm1heG1pbmQuY29tJmx0
+        Oy9hJmd0Oy48L2dlb3BsdWdpbl9jcmVkaXQ+Cgk8Z2VvcGx1Z2luX2NpdHk+
+        TG9uZG9uPC9nZW9wbHVnaW5fY2l0eT4KCTxnZW9wbHVnaW5fcmVnaW9uPkxv
+        bmRvbjwvZ2VvcGx1Z2luX3JlZ2lvbj4KCTxnZW9wbHVnaW5fYXJlYUNvZGU+
+        MDwvZ2VvcGx1Z2luX2FyZWFDb2RlPgoJPGdlb3BsdWdpbl9kbWFDb2RlPjA8
+        L2dlb3BsdWdpbl9kbWFDb2RlPgoJPGdlb3BsdWdpbl9jb3VudHJ5Q29kZT5H
+        QjwvZ2VvcGx1Z2luX2NvdW50cnlDb2RlPgoJPGdlb3BsdWdpbl9jb3VudHJ5
+        TmFtZT5Vbml0ZWQgS2luZ2RvbTwvZ2VvcGx1Z2luX2NvdW50cnlOYW1lPgoJ
+        PGdlb3BsdWdpbl9jb250aW5lbnRDb2RlPkVVPC9nZW9wbHVnaW5fY29udGlu
+        ZW50Q29kZT4KCTxnZW9wbHVnaW5fbGF0aXR1ZGU+NTEuNTU3NDwvZ2VvcGx1
+        Z2luX2xhdGl0dWRlPgoJPGdlb3BsdWdpbl9sb25naXR1ZGU+LTAuMTMwNTwv
+        Z2VvcGx1Z2luX2xvbmdpdHVkZT4KCTxnZW9wbHVnaW5fcmVnaW9uQ29kZT5I
+        OTwvZ2VvcGx1Z2luX3JlZ2lvbkNvZGU+Cgk8Z2VvcGx1Z2luX3JlZ2lvbk5h
+        bWU+TG9uZG9uPC9nZW9wbHVnaW5fcmVnaW9uTmFtZT4KCTxnZW9wbHVnaW5f
+        Y3VycmVuY3lDb2RlPkdCUDwvZ2VvcGx1Z2luX2N1cnJlbmN5Q29kZT4KCTxn
+        ZW9wbHVnaW5fY3VycmVuY3lTeW1ib2w+JmFtcDsjMTYzOzwvZ2VvcGx1Z2lu
+        X2N1cnJlbmN5U3ltYm9sPgoJPGdlb3BsdWdpbl9jdXJyZW5jeVN5bWJvbF9V
+        VEY4PsKjPC9nZW9wbHVnaW5fY3VycmVuY3lTeW1ib2xfVVRGOD4KCTxnZW9w
+        bHVnaW5fY3VycmVuY3lDb252ZXJ0ZXI+MC42Mjc3PC9nZW9wbHVnaW5fY3Vy
+        cmVuY3lDb252ZXJ0ZXI+CjwvZ2VvUGx1Z2luPgo=
+    http_version: 
+  recorded_at: Mon, 27 Oct 2014 10:52:52 GMT
 recorded_with: VCR 2.9.3

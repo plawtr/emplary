@@ -1,0 +1,24 @@
+.row
+  .large-6.large-centered.columns{style: "padding-top: 50px;"}
+    %h1 Suggest new item
+    = form_tag suggestions_path(current_user.id) do 
+      .row.collapse
+        .small-2.columns
+          %span.prefix
+            %i.fi-info{style: "font-size: 2em;"}
+        .small-10.columns
+          = text_field_tag :name, nil, autofocus: true, :placeholder => "What is it?", :required => true
+      .row.collapse
+        .small-2.columns
+          %span.prefix
+            %i.fi-link{style: "font-size: 2em;"}
+        .small-10.columns
+          = url_field_tag :url, nil, :placeholder => "URL", :required => true
+      .row.collapse
+        .small-12.columns
+          = text_area_tag :description, nil, :rows => 4, :placeholder => "Why is it emplary?"
+      .row.collapse
+        .small-8.small-offset-4.columns
+          = submit_tag "Submit", :class => "button"
+
+

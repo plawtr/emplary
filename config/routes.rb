@@ -9,6 +9,12 @@ Emplary::Application.routes.draw do
 
   resources :results, only: :create
 
+  resources :users do
+    member do 
+      resources :suggestions, only: [:new, :create]
+    end 
+  end
+
   post 'users/create' 
   get 'terms' => 'application#terms'
   get 'pricing' => 'application#pricing'

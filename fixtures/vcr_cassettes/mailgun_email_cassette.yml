@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api:key-62833bf8c07c531ab85d5355900a6678@api.mailgun.net/v2/emplary.com/messages
+    body:
+      encoding: US-ASCII
+      string: to=andrey%40emplary.com&subject=New%20Suggestion&text=User%20with%20id%20934%20has%20posted%3A%20http%3A%2F%2Fwww.ocado.com%2Fyummybutter%2C%20Just%20saw%20this%20and%20it%20is%20delicious&from=postmaster%40emplary.com
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '218'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.7
+      Date:
+      - Tue, 28 Oct 2014 14:28:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '89'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '600'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, x-requested-with
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Queued. Thank you.",
+          "id": "<20141028142817.58152.27233@emplary.com>"
+        }
+    http_version: 
+  recorded_at: Tue, 28 Oct 2014 14:28:16 GMT
+recorded_with: VCR 2.9.3

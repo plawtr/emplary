@@ -11,6 +11,7 @@ gem 'unicorn-worker-killer'
 gem 'newrelic_rpm'
 
 gem 'gibbon'
+gem 'rest-client'
 
 ##### geo
 gem 'geokit-rails'

@@ -212,6 +212,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    netrc (0.8.0)
     newrelic_rpm (3.9.5.251)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
@@ -295,6 +296,9 @@ GEM
     rdoc (4.1.2)
       json (~> 1.4)
     remotipart (1.2.1)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -421,6 +425,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   rails_layout
+  rest-client
   rspec
   rspec-mocks
   rspec-rails

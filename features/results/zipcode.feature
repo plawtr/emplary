@@ -65,7 +65,7 @@ Feature: Getting location based on zipcode
   Scenario: validated but incorrect zipcodes/postcodes when my ip resolves to a location in London
     Given my IP resolves to London
     When with a cassette named "validated_but_incorrect_zipcode_lookup_from_google_cassette" I provide "90219" as a zipcode 
-    # 90219 is valid but incorrect in the US, but is a postcode in Estonia
+    # 90219 is valid but incorrect in the US, but is a valid postcode in Estonia
     Then I should be on the root page
     And I should see "Invalid US/UK zipcode."
 

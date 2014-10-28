@@ -1,7 +1,7 @@
 
 
 When(/^I visit a page that doesn't exist$/) do
-  visit "/users/doesnotexist"
+  visit "/blah/doesnotexist"
 end
 
 Then(/^I should see a "(.*?)" error page$/) do |code|

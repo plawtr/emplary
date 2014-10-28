@@ -57,3 +57,4 @@
                               %a= link_to "Sign up »", new_user_registration_path
               %br
               %p= source.description
+              %p= link_to "Suggest new items »", new_suggestion_path(current_user.id) if user_signed_in?

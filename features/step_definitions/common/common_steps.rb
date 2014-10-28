@@ -25,3 +25,7 @@ end
 When(/^with a cassette named "([^"]*)" (.*)$/) do |cassette_name, step|
   VCR.use_cassette(cassette_name) { step step }
 end
+
+When(/^with a query matching cassette named "([^"]*)" (.*)$/) do |cassette_name, step|
+  VCR.use_cassette(cassette_name, :match_requests_on => [:query]) { step step }
+end

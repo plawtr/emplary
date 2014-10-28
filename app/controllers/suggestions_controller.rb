@@ -22,7 +22,7 @@ class SuggestionsController < ApplicationController
     RestClient.post "https://api:#{ENV['MAILGUN_API_KEY']}@api.mailgun.net/v2/#{ENV['MAILGUN_DOMAIN']}"+"/messages",
       :to => ENV['MAILGUN_RECEPIENT'], 
       :subject => "New Suggestion",
-      :text => "User with id #{params[:id]} has posted: #{params[:url]}, #{params[:description]}",
+      :text => "User with id #{params[:id]} has posted: #{params[:name]}, #{params[:url]}, #{params[:description]}",
       :from => "postmaster@emplary.com"
   end
 end

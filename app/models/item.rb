@@ -8,4 +8,6 @@ class Item < ActiveRecord::Base
   has_many :locations, :as => :locatable, :through => :provider
   acts_as_mappable :through => :provider
   validates :name, :link, :category, presence: true
+
+  scope :with_provider_within, ->(bounds) { joins(provider: :locations).where(locations: {id: Location.in_bounds(bounds).pluck(:id)}).uniq}
 end

@@ -11,20 +11,36 @@ Given(/^another source with provider, category and item exists$/) do
   @the_source = FactoryGirl.create :source_with_dependents
 end
 
-Then(/^I should see provider name$/) do
+Then(/^I should see provider$/) do
   page.should have_content @the_source.providers.first.name
 end
 
-Then(/^I should see source name$/) do
+Then(/^I should see source$/) do
   page.should have_content @the_source.name
 end
 
-Then(/^I should see category name$/) do
+Then(/^I should see category$/) do
   page.should have_content @the_source.categories.first.name
 end
 
-Then(/^I should see item name$/) do
+Then(/^I should see item$/) do
   page.should have_content @the_source.items.first.name
+end
+
+Then(/^I should not see provider$/) do
+  page.should_not have_content @the_source.providers.first.name
+end
+
+Then(/^I should not see source$/) do
+  page.should_not have_content @the_source.name
+end
+
+Then(/^I should not see category$/) do
+  page.should_not have_content @the_source.categories.first.name
+end
+
+Then(/^I should not see item$/) do
+  page.should_not have_content @the_source.items.first.name
 end
 
 Given(/^my IP resolves to London$/) do 

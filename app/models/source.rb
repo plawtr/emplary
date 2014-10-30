@@ -6,4 +6,5 @@ class Source < ActiveRecord::Base
   has_many :items, through: :providers
   validates :name, presence: true, uniqueness: true
 
+  scope :with_providers_within, ->(bounds) { joins(:categories, :items, providers: :locations).where(locations: {id: Location.in_bounds(bounds).pluck(:id)}).uniq }
 end

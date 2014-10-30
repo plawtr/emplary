@@ -8,4 +8,6 @@ class Provider < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_many :items, through: :categories 
   validates :name, :website, presence: true, uniqueness: true
+
+  scope :located_within, ->(bounds) { joins(:locations).where(locations: {id: Location.in_bounds(bounds).pluck(:id)}).uniq}
 end

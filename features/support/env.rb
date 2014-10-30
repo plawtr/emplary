@@ -84,11 +84,18 @@ Before do
   default_url_options[:port] = 54163
   # @request.env["devise.mapping"] = Devise.mappings[:user] # If using Devise
   # @request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook] 
+  # ensure the remote_ip is unset for every test
+  class ActionDispatch::Request
+    def remote_ip
+    end
+  end
 end
 
 After do |scenario|
   DatabaseCleaner.clean
 end
+
+
 
 VCR.configure do |c|
     c.cassette_library_dir = 'fixtures/vcr_cassettes'

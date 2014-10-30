@@ -73,15 +73,15 @@ Feature: Getting location based on zipcode
   Scenario: correct London postcode results in a page with structured results
     When with a cassette named "London_postcode_lookup_from_google_cassette" I provide "EC2A3PT" as a zipcode
       Then I should see "Results in London EC2A 3PT, UK" 
-      And I should see provider name
-      And I should see source name
-      And I should see category name
-      And I should see item name
+      And I should see provider 
+      And I should see source 
+      And I should see category 
+      And I should see item 
     Given another source with provider, category and item exists 
       And I visit the homepage
       When with a cassette named "London_postcode_lookup_from_google_cassette" I provide "EC2A3PT" as a zipcode
-        Then I should see provider name
-        And I should see source name
-        And I should see category name
-        And I should see item name
+        Then I should see provider 
+        And I should see source 
+        And I should see category 
+        And I should see item 
   

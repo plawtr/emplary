@@ -1,0 +1,387 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.google.com/maps/api/geocode/json?address=EC2A%203PT&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 29 Oct 2014 16:18:24 GMT
+      Expires:
+      - Thu, 30 Oct 2014 16:18:24 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "EC2A 3PT",
+                       "short_name" : "EC2A 3PT",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Greater London",
+                       "short_name" : "Gt Lon",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "London EC2A 3PT, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.52416580000001,
+                          "lng" : -0.08055699999999999
+                       },
+                       "southwest" : {
+                          "lat" : 51.5236567,
+                          "lng" : -0.0807566
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.52399279999999,
+                       "lng" : -0.0806547
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.5252602302915,
+                          "lng" : -0.07930781970849796
+                       },
+                       "southwest" : {
+                          "lat" : 51.5225622697085,
+                          "lng" : -0.08200578029150203
+                       }
+                    }
+                 },
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Wed, 29 Oct 2014 16:18:24 GMT
+- request:
+    method: get
+    uri: https://maps.google.com/maps/api/geocode/json?address=E8%204DG&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 29 Oct 2014 16:18:25 GMT
+      Expires:
+      - Thu, 30 Oct 2014 16:18:25 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "E8 4DG",
+                       "short_name" : "E8 4DG",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Greater London",
+                       "short_name" : "Gt Lon",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "London E8 4DG, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.5383177,
+                          "lng" : -0.07559349999999999
+                       },
+                       "southwest" : {
+                          "lat" : 51.5374165,
+                          "lng" : -0.07728639999999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.5378591,
+                       "lng" : -0.0762501
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.5392160802915,
+                          "lng" : -0.07509096970849796
+                       },
+                       "southwest" : {
+                          "lat" : 51.5365181197085,
+                          "lng" : -0.07778893029150202
+                       }
+                    }
+                 },
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Wed, 29 Oct 2014 16:18:25 GMT
+- request:
+    method: get
+    uri: https://maps.google.com/maps/api/geocode/json?address=SW1E%202JL&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 29 Oct 2014 16:18:26 GMT
+      Expires:
+      - Thu, 30 Oct 2014 16:18:26 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "SW1E",
+                       "short_name" : "SW1E",
+                       "types" : [ "postal_code_prefix", "postal_code" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Greater London",
+                       "short_name" : "Gt Lon",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "London SW1E, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.5007114,
+                          "lng" : -0.1353795
+                       },
+                       "southwest" : {
+                          "lat" : 51.4961051,
+                          "lng" : -0.1447617
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.4984999,
+                       "lng" : -0.1401487
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.5007114,
+                          "lng" : -0.1353795
+                       },
+                       "southwest" : {
+                          "lat" : 51.4961051,
+                          "lng" : -0.1447617
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "postal_code_prefix", "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Wed, 29 Oct 2014 16:18:26 GMT
+- request:
+    method: get
+    uri: http://www.geoplugin.net/xml.gp?ip=82.35.196.222
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - geoPlugin/3.2.6
+      Date:
+      - Wed, 29 Oct 2014 16:18:26 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1154'
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGdlb1Bs
+        dWdpbj4KCTxnZW9wbHVnaW5fcmVxdWVzdD44Mi4zNS4xOTYuMjIyPC9nZW9w
+        bHVnaW5fcmVxdWVzdD4KCTxnZW9wbHVnaW5fc3RhdHVzPjIwMDwvZ2VvcGx1
+        Z2luX3N0YXR1cz4KCTxnZW9wbHVnaW5fY3JlZGl0PlNvbWUgb2YgdGhlIHJl
+        dHVybmVkIGRhdGEgaW5jbHVkZXMgR2VvTGl0ZSBkYXRhIGNyZWF0ZWQgYnkg
+        TWF4TWluZCwgYXZhaWxhYmxlIGZyb20gJmx0O2EgaHJlZj1cJ2h0dHA6Ly93
+        d3cubWF4bWluZC5jb21cJyZndDtodHRwOi8vd3d3Lm1heG1pbmQuY29tJmx0
+        Oy9hJmd0Oy48L2dlb3BsdWdpbl9jcmVkaXQ+Cgk8Z2VvcGx1Z2luX2NpdHk+
+        TG9uZG9uPC9nZW9wbHVnaW5fY2l0eT4KCTxnZW9wbHVnaW5fcmVnaW9uPkxv
+        bmRvbjwvZ2VvcGx1Z2luX3JlZ2lvbj4KCTxnZW9wbHVnaW5fYXJlYUNvZGU+
+        MDwvZ2VvcGx1Z2luX2FyZWFDb2RlPgoJPGdlb3BsdWdpbl9kbWFDb2RlPjA8
+        L2dlb3BsdWdpbl9kbWFDb2RlPgoJPGdlb3BsdWdpbl9jb3VudHJ5Q29kZT5H
+        QjwvZ2VvcGx1Z2luX2NvdW50cnlDb2RlPgoJPGdlb3BsdWdpbl9jb3VudHJ5
+        TmFtZT5Vbml0ZWQgS2luZ2RvbTwvZ2VvcGx1Z2luX2NvdW50cnlOYW1lPgoJ
+        PGdlb3BsdWdpbl9jb250aW5lbnRDb2RlPkVVPC9nZW9wbHVnaW5fY29udGlu
+        ZW50Q29kZT4KCTxnZW9wbHVnaW5fbGF0aXR1ZGU+NTEuNTU3NDwvZ2VvcGx1
+        Z2luX2xhdGl0dWRlPgoJPGdlb3BsdWdpbl9sb25naXR1ZGU+LTAuMTMwNTwv
+        Z2VvcGx1Z2luX2xvbmdpdHVkZT4KCTxnZW9wbHVnaW5fcmVnaW9uQ29kZT5I
+        OTwvZ2VvcGx1Z2luX3JlZ2lvbkNvZGU+Cgk8Z2VvcGx1Z2luX3JlZ2lvbk5h
+        bWU+TG9uZG9uPC9nZW9wbHVnaW5fcmVnaW9uTmFtZT4KCTxnZW9wbHVnaW5f
+        Y3VycmVuY3lDb2RlPkdCUDwvZ2VvcGx1Z2luX2N1cnJlbmN5Q29kZT4KCTxn
+        ZW9wbHVnaW5fY3VycmVuY3lTeW1ib2w+JmFtcDsjMTYzOzwvZ2VvcGx1Z2lu
+        X2N1cnJlbmN5U3ltYm9sPgoJPGdlb3BsdWdpbl9jdXJyZW5jeVN5bWJvbF9V
+        VEY4PsKjPC9nZW9wbHVnaW5fY3VycmVuY3lTeW1ib2xfVVRGOD4KCTxnZW9w
+        bHVnaW5fY3VycmVuY3lDb252ZXJ0ZXI+MC42MTk5PC9nZW9wbHVnaW5fY3Vy
+        cmVuY3lDb252ZXJ0ZXI+CjwvZ2VvUGx1Z2luPgo=
+    http_version: 
+  recorded_at: Wed, 29 Oct 2014 16:18:26 GMT
+recorded_with: VCR 2.9.3

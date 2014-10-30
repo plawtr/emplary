@@ -4,8 +4,16 @@ class ResultsPresenter
     @user_location = user_location
   end
 
+  def bounds
+    Geokit::Bounds.from_point_and_radius(@user_location, 50)
+  end 
+
+  def locations 
+    Location.in_bounds(bounds)
+  end 
+
   def sources 
-    Source.all.includes(:providers, :categories, :items)
+    Source.with_providers_within(bounds)
   end
 
   def source_names

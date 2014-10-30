@@ -16,16 +16,16 @@
         .content{:class => "#{"active" if index == 0}", :id => "#{@result.url_encode_for(source.name)}"}
           .row{style: "padding-top:30px;"}
             .large-8.large-offset-2.columns
-              - source.providers.each do |provider|
+              - source.providers.located_within(@result.bounds).each do |provider|
                 %a{:href => "#{provider.website}", target:"_blank"}
                   %h2= provider.name
                 %dl.accordion{"data-accordion" => ""}
                   %dd.accordion-navigation
-                    - provider.categories.each do |category|
+                    - provider.categories.with_providers_within(@result.bounds).each do |category|
                       %a{:href => "##{@result.url_encode_for(provider.name)+'_'+@result.url_encode_for(category.name)}"} 
                         =category.name
                         .content{:id => "#{@result.url_encode_for(provider.name)+'_'+@result.url_encode_for(category.name)}"} 
-                          -category.items.each do |item|
+                          -category.items.with_provider_within(@result.bounds).each do |item|
                             - if item.provider == provider
                               .row
                                 .small-9.large-9.columns 

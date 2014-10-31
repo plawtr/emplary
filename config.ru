@@ -19,4 +19,19 @@ end
 # This file is used by Rack-based servers to start the application.
 
 require ::File.expand_path('../config/environment',  __FILE__)
-run Rails.application
+require './blog/run' # Require the run.rb file which has the Rack setup for the blog
+
+map '/blog' do # Anything at blog/ and beyond will then hit the blog
+  run Blog
+end
+
+map '/' do # By default we want everything to hit our Rails application
+  run Rails.application
+end
+
+
+
+
+
+
+

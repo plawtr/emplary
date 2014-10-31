@@ -112,3 +112,7 @@ group :test do
   gem "timecop"
   gem 'cucumber-timecop', :require => false
 end
+
+group :blog do
+  gem 'sinatra', '~> 1.4.2'
+end

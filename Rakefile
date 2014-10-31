@@ -4,3 +4,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 Emplary::Application.load_tasks
+
+document_root = "~/emplary.com/blog"

@@ -1,6 +1,8 @@
+require './blog/blog.rb'
+
 Emplary::Application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   root 'application#index'
   
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
@@ -21,6 +23,11 @@ Emplary::Application.routes.draw do
   get 'sessions/new' => 'application#login'
   get 'results' => 'application#results'
   get 'thank_you' => 'users#thank_you'
+
+  mount Blog => "/blog"
+  
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
 
   %w(401 404 422 500).each do |code|
     get code, :to => "errors#show", :code => code

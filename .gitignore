@@ -20,3 +20,13 @@
 /config/initializers/unlimited_strength_cryptography_keep.rb
 *.env
 *.DS_Store
+
+
+
+.sass-cache
+.gist-cache
+.pygments-cache
+sass.old
+source.old
+source/_stash
+source/stylesheets/screen.css

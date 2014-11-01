@@ -10,4 +10,13 @@ class Item < ActiveRecord::Base
   validates :name, :link, :category, presence: true
 
   scope :with_provider_within, ->(bounds) { joins(provider: :locations).where(locations: {id: Location.in_bounds(bounds).pluck(:id)}).uniq}
+
+
+  rails_admin do 
+    edit do
+      configure :locations do
+        hide
+      end
+    end
+  end
 end

@@ -1,6 +1,3 @@
 [submodule "blog"]
 	path = blog
 	url = https://github.com/plawtr/emplary-blog.git
-[submodule "emplary-blog"]
-	path = emplary-blog
-	url = git@github.com:plawtr/emplary-blog.git

@@ -1,4 +1,3 @@
-== README
 
 [ ![Codeship Status for plawtr/emplary](https://www.codeship.io/projects/5fbdaad0-3915-0132-5b0d-560abec77063/status)](https://www.codeship.io/projects/42149)
 

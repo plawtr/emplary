@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_paper_trail
+  nilify_blanks
+  
   has_one :location, :as => :locatable
   acts_as_mappable :through => :location
 

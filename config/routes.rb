@@ -14,14 +14,12 @@ Emplary::Application.routes.draw do
   resources :users do
     member do 
       resources :suggestions, only: [:new, :create]
+      resources :locations, only: :new
     end 
   end
 
   post 'users/create' 
   get 'terms' => 'application#terms'
-  get 'pricing' => 'application#pricing'
-  get 'sessions/new' => 'application#login'
-  get 'results' => 'application#results'
   get 'thank_you' => 'users#thank_you'
 
   mount Blog => "/blog"

@@ -1,3 +1,7 @@
+When(/^I click "(.*?)"$/) do |text|
+  click_on text
+end
+
 Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content content
 end

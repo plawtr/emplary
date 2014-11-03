@@ -54,7 +54,7 @@ Feature: Getting location based on zipcode
     Given my IP resolves to London
     When with a cassette named "incorrect_zipcode_lookup_from_google_cassette" I provide <postcode> as a zipcode
     And I should see "Invalid US/UK zipcode, using location from your IP address."
-    And I should see "London, London, GB"
+    And I should see "London"
 
     Examples:
       | postcode     | 

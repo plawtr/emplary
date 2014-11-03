@@ -11,6 +11,20 @@ Given(/^another source with provider, category and item exists$/) do
   @the_source = FactoryGirl.create :source_with_dependents
 end
 
+Then(/^I should see provider, source, category, and item$/) do
+  page.should have_content @the_source.providers.first.name
+  page.should have_content @the_source.name
+  page.should have_content @the_source.categories.first.name
+  page.should have_content @the_source.items.first.name
+end
+
+Then(/^I should not see provider, source, category, and item$/) do
+  page.should_not have_content @the_source.providers.first.name
+  page.should_not have_content @the_source.name
+  page.should_not have_content @the_source.categories.first.name
+  page.should_not have_content @the_source.items.first.name
+end
+
 Then(/^I should see provider$/) do
   page.should have_content @the_source.providers.first.name
 end

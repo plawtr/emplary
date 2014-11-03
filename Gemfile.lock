@@ -214,6 +214,9 @@ GEM
     net-ssh (2.9.1)
     netrc (0.8.0)
     newrelic_rpm (3.9.5.251)
+    nilify_blanks (1.1.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     nokogiri (1.6.3.1-java)
@@ -421,6 +424,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   newrelic_rpm
+  nilify_blanks
   omniauth-facebook
   paper_trail (~> 3.0.6)
   pg

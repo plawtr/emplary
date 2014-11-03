@@ -7,10 +7,7 @@ Feature: Getting location based results
 
   Scenario Outline: postcode within 50 miles of the provider
     When with a cassette named "location_based_within_50_miles_lookup_from_google_cassette" I provide <postcode> as a zipcode
-    Then I should see provider
-    And I should see source
-    And I should see category
-    And I should see item
+    Then I should see provider, source, category, and item
 
     Examples:
       | postcode   | 
@@ -22,10 +19,7 @@ Feature: Getting location based results
 
   Scenario Outline: postcode outside 50 miles of the provider
     When with a cassette named "location_based_outside_50_miles_lookup_from_google_cassette" I provide <postcode> as a zipcode
-    Then I should not see provider
-    And I should not see source
-    And I should not see category
-    And I should not see item
+    Then I should not see provider, source, category, and item
 
     Examples:
       | postcode     | 
@@ -36,10 +30,7 @@ Feature: Getting location based results
   Scenario Outline: my ip resolves to a location within 50 miles of the provider
     Given my IP resolves to London
     When with a cassette named "location_based_within_50_miles_and_ip_lookup_from_google_cassette" I provide <postcode> as a zipcode
-    Then I should see provider
-    And I should see source
-    And I should see category
-    And I should see item
+    Then I should see provider, source, category, and item
 
     Examples:
       | postcode     | 

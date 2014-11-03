@@ -6,26 +6,19 @@ class ApplicationController < ActionController::Base
   before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
 
   def index
+    if not user_signed_in? 
+      render 'index'
+    elsif not current_user.location
+      render 'locations/new'
+    else
+      @result = ResultsPresenter.new current_user.location
+      render 'results/index'
+    end
 	end
 
 	def terms
 	end
 
-  def pricing
-  end
-
-  def login
-  end
-
-  def results
-     # loc=GoogleGeocoder.geocode('e8 4dg')
-  end
-
-  def format_errors(error_messages)
-    output = []
-    error_messages.each {|k, v| output << "#{k.to_s.capitalize} #{v.join(", ")}."}
-    output
-  end
 
   protected
 

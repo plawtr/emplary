@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+
 
   def new
   end
@@ -11,13 +13,11 @@ class UsersController < ApplicationController
   def mailchimp_register(email, zipcode)
   	gb = Gibbon::API.new
     begin
-
     	gb.lists.subscribe({:id => ENV['MAILCHIMP_LIST_ID'], 
           :email => {:email => email}, 
           :merge_vars => {:ZIPCODE => zipcode},
           :double_optin => false,
         	:send_welcome => true})
-
 		rescue Gibbon::MailChimpError => e
       error = e.code == 214 ? "#{email} is already subscribed" : e.message
   		flash[:error] = error

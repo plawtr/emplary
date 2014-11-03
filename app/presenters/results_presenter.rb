@@ -25,6 +25,6 @@ class ResultsPresenter
   end
 
   def full_address
-    @user_location.full_address || "#{@user_location.city.to_s} #{@user_location.state_code}, #{@user_location.country}" 
+    @user_location.full_address || "#{@user_location.city.to_s} #{@user_location.state_code} #{@user_location.country}" 
   end
 end

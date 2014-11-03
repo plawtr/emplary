@@ -6,15 +6,14 @@ class ResultsController < ApplicationController
   end
 
   def create
-    @user_location = location_factory_for(params[:postcode])
-    if @user_location  
-      @result = ResultsPresenter.new @user_location 
+    @user_location ||= location_factory_for(params[:postcode])
+    if @user_location
+      @result = ResultsPresenter.new @user_location
       render action: 'index'
-      @result = nil
+      current_user.location = @user_location if user_signed_in? 
     else
       redirect_to root_url, alert: "Invalid US/UK zipcode."
     end
-
   end
 
   private
@@ -22,7 +21,7 @@ class ResultsController < ApplicationController
   def location_factory_for(postcode)
     location = valid?(postcode) ? Geokit::Geocoders::MultiGeocoder.geocode(valid?(postcode)) : session[:geo_location]    
     flash[:notice] = "Invalid US/UK zipcode, using location from your IP address." if location == session[:geo_location] 
-    return location if (not location.nil?) && location.success && in_UK_or_US?(location) 
+    return converted_from_geokit(location) if (not location.nil?) && location.success && in_UK_or_US?(location) 
     return nil
   end
 
@@ -35,4 +34,20 @@ class ResultsController < ApplicationController
     return false
   end
 
+  def converted_from_geokit location 
+    loc = Location.new 
+    attributes = loc.attributes.map{ |el| el.first }
+    location.instance_variables.each do |var|
+      loc.send :write_attribute, var[1..-1], location.instance_variable_get(var) if attributes.include? var[1..-1]
+    end
+    if location.suggested_bounds
+      loc.swlat = location.suggested_bounds.sw.lat
+      loc.nelat = location.suggested_bounds.ne.lat
+      loc.nelng = location.suggested_bounds.ne.lng
+      loc.swlat = location.suggested_bounds.sw.lng
+    end
+    return loc
+  end
 end
+
+

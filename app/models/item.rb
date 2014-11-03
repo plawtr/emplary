@@ -1,6 +1,8 @@
 class Item < ActiveRecord::Base
   # asparagus
-  has_paper_trail  
+  has_paper_trail 
+  nilify_blanks
+   
   belongs_to :category
   belongs_to :provider
   delegate :sources, :to => :provider, :allow_nil => false

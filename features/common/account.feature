@@ -77,12 +77,12 @@ Feature: Logging in and finding your accounts
       Given I request a password change without a token 
         Then I should see "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
 
-    Scenario: a user's session expires with time
+    Scenario: a user's session should not expire with time
       Given a user 
       And I sign in
       Given it is currently 2 days from now
       When I visit the profile page
-      Then I should see "Your session expired. Please sign in again to continue."
+      Then I should not see "Your session expired. Please sign in again to continue."
 
     Scenario: a user's session does not expire if user asks
       Given a user 

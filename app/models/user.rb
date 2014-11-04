@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
-  #devise modules still available :lockable
+  #devise modules still available :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
-         :validatable, :timeoutable, :confirmable, 
+         :validatable, :confirmable, 
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_paper_trail

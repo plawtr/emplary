@@ -70,12 +70,8 @@ ActiveRecord::Schema.define(version: 20141025093822) do
     t.string   "province"
     t.string   "precision"
     t.string   "full_address"
-    t.float    "lat"
-    t.float    "lng"
-    t.float    "swlat"
-    t.float    "swlng"
-    t.float    "nelat"
-    t.float    "nelng"
+    t.decimal  "lat"
+    t.decimal  "lng"
     t.string   "provider"
     t.string   "district"
     t.string   "country"
@@ -87,8 +83,16 @@ ActiveRecord::Schema.define(version: 20141025093822) do
   end
 
   add_index "locations", ["lat", "lng"], name: "index_locations_on_lat_and_lng", using: :btree
-  add_index "locations", ["nelat", "nelng"], name: "index_locations_on_nelat_and_nelng", using: :btree
-  add_index "locations", ["swlat", "swlng"], name: "index_locations_on_swlat_and_swlng", using: :btree
+
+  create_table "ne_suggested_bounds", force: true do |t|
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ne_suggested_bounds", ["lat", "lng"], name: "index_ne_suggested_bounds_on_lat_and_lng", using: :btree
 
   create_table "providers", force: true do |t|
     t.string   "name",       null: false
@@ -116,6 +120,16 @@ ActiveRecord::Schema.define(version: 20141025093822) do
   end
 
   add_index "sources", ["name"], name: "index_sources_on_name", unique: true, using: :btree
+
+  create_table "sw_suggested_bounds", force: true do |t|
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sw_suggested_bounds", ["lat", "lng"], name: "index_sw_suggested_bounds_on_lat_and_lng", using: :btree
 
   create_table "users", force: true do |t|
     t.boolean  "admin",                  default: false

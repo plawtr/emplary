@@ -16,8 +16,8 @@ Geokit::Geocoders::proxy = nil
 # This is your yahoo application key for the Yahoo Geocoder.
 # See http://developer.yahoo.com/faq/index.html#appid
 # and http://developer.yahoo.com/maps/rest/V1/geocode.html
-# Geokit::Geocoders::YahooGeocoder.key = ENV['YAHOO_MAPS_KEY']
-# Geokit::Geocoders::YahooGeocoder.secret = ENV['YAHOO_MAPS_SECRET']
+Geokit::Geocoders::YahooGeocoder.key = ENV['YAHOO_MAPS_KEY'] 
+Geokit::Geocoders::YahooGeocoder.secret = ENV['YAHOO_MAPS_SECRET']
 
 # This is your Google Maps geocoder keys (all optional).
 # See http://www.google.com/apis/maps/signup.html
@@ -41,7 +41,7 @@ Geokit::Geocoders::GoogleGeocoder.api_key = ENV['GOOGLE_API_KEY']
 # usage tied to an account, the value should be set to username:password.
 # See http://geocoder.us
 # and http://geocoder.us/user/signup
-Geokit::Geocoders::UsGeocoder.key = nil
+# Geokit::Geocoders::UsGeocoder.key = nil
 
 # This is your authorization key for geocoder.ca.
 # To use the free service, the value can be set to nil or false.  For
@@ -58,10 +58,10 @@ Geokit::Geocoders::GeonamesGeocoder.key = ENV['GEONAMES_KEY']
 
 # Most other geocoders need either no setup or a key
 Geokit::Geocoders::BingGeocoder.key = ENV['BINGMAPS_KEY']
-# Geokit::Geocoders::MapQuestGeocoder.key = ''
+Geokit::Geocoders::MapQuestGeocoder.key = ENV['MAPQUEST_KEY']
 # Geokit::Geocoders::YandexGeocoder.key = ''
 # Geokit::Geocoders::MapboxGeocoder.key = 'ACCESS_TOKEN'
-# Geokit::Geocoders::OpencageGeocoder.key = 'some_api_key'
+Geokit::Geocoders::OpencageGeocoder.key = ENV['OPENCAGE_KEY']
 
 # Geonames has a free service and a premium service, each using a different URL
 # GeonamesGeocoder.premium = true will use http://ws.geonames.net (premium)
@@ -78,7 +78,7 @@ Geokit::Geocoders::GeonamesGeocoder.premium = false
 # Be aware that there are Terms of Use restrictions on how you can use the
 # various geocoders.  Make sure you read up on relevant Terms of Use for each
 # geocoder you are going to use.
-Geokit::Geocoders::provider_order = [:google,:bing,:geonames,:us]
+Geokit::Geocoders::provider_order = [:google, :bing, :geonames, :mapquest, :yahoo, :opencage]
 
 # The IP provider order. Valid symbols are :ip,:geo_plugin.
 # As before, make sure you read up on relevant Terms of Use for each.
